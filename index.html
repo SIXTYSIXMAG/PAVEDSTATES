@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAVED STATES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=Archivo+Narrow:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,7 +16,7 @@
         }
 
         body {
-            font-family: 'Crimson Pro', serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background: #000;
             color: #fff;
             overflow-x: hidden;
@@ -41,7 +40,7 @@
         }
 
         .logo-text {
-            font-family: 'Archivo Narrow', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 1.2rem;
             font-weight: 500;
             letter-spacing: 0.15em;
@@ -59,7 +58,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: #fff;
             padding: 0.75rem 1.5rem;
-            font-family: 'Archivo Narrow', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 0.9rem;
             letter-spacing: 0.05em;
             cursor: pointer;
@@ -98,7 +97,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Archivo Narrow', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 0.9rem;
             color: #666;
             letter-spacing: 0.1em;
@@ -115,7 +114,7 @@
             backdrop-filter: blur(20px);
             z-index: 200;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             opacity: 0;
             pointer-events: none;
@@ -129,8 +128,8 @@
         }
 
         .info-content {
-            max-width: 600px;
-            padding: 3rem;
+            max-width: 640px;
+            padding: 4rem 3rem;
             position: relative;
             transform: translateY(20px);
             transition: transform 0.4s ease;
@@ -141,17 +140,18 @@
         }
 
         .close-btn {
-            position: absolute;
+            position: fixed;
             top: 2rem;
             right: 2rem;
             background: none;
             border: none;
-            font-family: 'Archivo Narrow', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 2rem;
             cursor: pointer;
             color: #fff;
             transition: opacity 0.2s;
             line-height: 1;
+            z-index: 210;
         }
 
         .close-btn:hover {
@@ -159,19 +159,93 @@
         }
 
         .info-content h2 {
-            font-family: 'Archivo Narrow', sans-serif;
-            font-size: 1.8rem;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.6rem;
             font-weight: 500;
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
             color: #fff;
+            line-height: 1.3;
+        }
+
+        .info-content .subtitle {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: #999;
+            margin-bottom: 2rem;
         }
 
         .info-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
             color: #ccc;
+        }
+
+        .info-content .section-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.25);
+            margin: 2.5rem 0;
+        }
+
+        .info-content .event-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-content .event-block h3 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            letter-spacing: 0.01em;
+        }
+
+        .info-content .event-detail {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #999;
+            margin-bottom: 0.15rem;
+        }
+
+        .info-content .rsvp-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .info-content .rsvp-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .info-content .contact-block {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #888;
+        }
+
+        .info-content .contact-block a {
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .info-content .contact-block a:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -195,12 +269,16 @@
             }
 
             .info-content {
-                padding: 2rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
             .close-btn {
                 top: 1rem;
                 right: 1.5rem;
+            }
+
+            .info-content h2 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -215,7 +293,6 @@
 
     <!-- Infinite Scroll Container -->
     <div class="scroll-container" id="scrollContainer">
-        <!-- Images will be automatically generated from the JavaScript array above -->
     </div>
 
     <!-- Info Button -->
@@ -224,15 +301,44 @@
     <!-- Info Overlay -->
     <div class="info-overlay" id="infoOverlay">
         <div class="info-content">
-            <button class="close-btn" id="closeBtn">×</button>
-            <h2>About Paved States</h2>
-            <p>PAVED STATES, presented by Sixtysix magazine, is a hybrid collective exhibition and concept store presented at NEOCON. </p>
-            <p>For media inquires please contact:
-Katie Fosdick, Novita PR
-katiefosdick@novitapr.com</p>
-            <p>For sponsorship opportunties please contact:
-Laura Howe, Studio Sixtysix
-laura@sixtysixmag.com</p>
+            <button class="close-btn" id="closeBtn">&times;</button>
+
+            <h2>Paved States x Design Lab at NeoCon, Presented by Sixtysix and Haworth</h2>
+            <div class="subtitle">The Mart, Chicago &nbsp;|&nbsp; June 7&ndash;10, 2026</div>
+
+            <p>NeoCon welcomes Paved States x Design Lab, an immersive installation jointly curated by Patricia Urquiola and Chris Force and created in collaboration with Sixtysix and Haworth. The installation transforms the THE MART lobby and showroom space into something entirely its own. Part gallery, part exhibition, part retail space, the environment unfolds as a lived-in apartment anchored by a listening room, inviting visitors to browse, touch, and move through a curated landscape of designed objects.</p>
+
+            <p>Throughout the week, Paved States will host a series of design-forward programs including panel talks and hands-on workshops in jewelry making, scent design, and floral making, offering an opportunity to engage with craft and connect with the creative community during one of design&rsquo;s biggest weeks.</p>
+
+            <p>Sixtysix will also host a must-attend opening night cocktail reception on Monday, June 8 from 5&ndash;8pm. Mingle with designers, discover curated objects for sale, and experience the intersection of emerging talent and contemporary design culture, all set against live music, drinks, and special activations.</p>
+
+            <p>The exhibition features work from an exceptional roster of international and domestic designers: Zac Benloulou (Canada); Studio Rotolo, Stefano Giacomello (Canada); Ceren Arslan, Bureau Betak &amp; EXIT Ceren (USA); Hank Beyer and Alex Sizemore, HBAS Co. (USA); Malcolm Majer (USA); Hannah Bigeleisen (New York); Kiki Goti (New York); Lauren Goodman (New York); Madeline Isakson (New York); and Noel Mercado (Chicago).</p>
+
+            <div class="section-divider"></div>
+
+            <div class="event-block">
+                <h3>Paved States Cocktail Reception</h3>
+                <div class="event-detail">Monday, June 8</div>
+                <div class="event-detail">5&ndash;8pm</div>
+                <div class="event-detail">THE MART, Lobby</div>
+            </div>
+
+            <p>Sixtysix Magazine will host an exclusive cocktail reception celebrating the Paved States X Design Lab exhibition at NeoCon in The Mart.</p>
+
+            <p>Mingle with designers, discover curated objects, and experience the intersection of emerging talent and contemporary design, all while enjoying drinks and music in a vibrant celebration of creative community.</p>
+
+            <a class="rsvp-link" href="https://forms.gle/eM512xtogPCDxv2d9" target="_blank" rel="noopener">RSVP</a>
+
+            <div class="section-divider"></div>
+
+            <p>PAVED STATES, presented by Sixtysix magazine, is a hybrid collective exhibition and concept store.</p>
+
+            <div class="contact-block">
+                For media inquiries please contact:<br>
+                Katie Fosdick, Novita PR &mdash; <a href="mailto:katiefosdick@novitapr.com">katiefosdick@novitapr.com</a><br><br>
+                For sponsorship opportunities please contact:<br>
+                Laura Howe, Studio Sixtysix &mdash; <a href="mailto:laura@sixtysixmag.com">laura@sixtysixmag.com</a>
+            </div>
         </div>
     </div>
 
@@ -253,7 +359,7 @@ laura@sixtysixmag.com</p>
 
         // Generate image sections automatically
         const scrollContainer = document.getElementById('scrollContainer');
-        scrollContainer.innerHTML = ''; // Clear placeholders
+        scrollContainer.innerHTML = '';
         
         images.forEach((imageName, index) => {
             const section = document.createElement('div');
@@ -271,12 +377,10 @@ laura@sixtysixmag.com</p>
         const originalSections = Array.from(scrollContainer.children);
         let isCloning = false;
 
-        // Clone images for infinite scroll
         function cloneImages() {
             if (isCloning) return;
             isCloning = true;
             
-            // Clone original sections and append
             originalSections.forEach(section => {
                 const clone = section.cloneNode(true);
                 scrollContainer.appendChild(clone);
@@ -285,21 +389,17 @@ laura@sixtysixmag.com</p>
             isCloning = false;
         }
 
-        // Initial clone to create seamless loop
         cloneImages();
 
-        // Check scroll position and clone more if needed
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
             const scrollHeight = document.documentElement.scrollHeight;
             const clientHeight = window.innerHeight;
 
-            // When user scrolls near the bottom, clone more images
             if (scrollTop + clientHeight >= scrollHeight - clientHeight) {
                 cloneImages();
             }
 
-            // Reset scroll when reaching certain point (creates infinite loop effect)
             const sectionHeight = originalSections.length * window.innerHeight;
             if (scrollTop >= sectionHeight * 2) {
                 window.scrollTo(0, sectionHeight);
