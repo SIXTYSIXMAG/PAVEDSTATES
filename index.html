@@ -251,6 +251,85 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   }
 }
 
+/* Hamburger toggle (mobile only) */
+.nav-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 101;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--type);
+  margin: 4px 0;
+  transition: transform 350ms var(--ease), opacity 250ms var(--ease);
+  transform-origin: center;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(5.5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+.mobile-menu { display: none; }
+
+@media (max-width: 700px) {
+  .nav-left, .nav-right { display: none !important; }
+  .nav-toggle {
+    display: flex !important;
+    position: fixed;
+    left: var(--side-pad);
+    top: 14px;
+    width: 32px;
+    height: 88px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 6px 0;
+    z-index: 200;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 110px var(--side-pad) 40px;
+    background: rgba(40, 6, 11, 0.96);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    transform: translateY(-100%);
+    transition: transform 420ms var(--ease);
+    z-index: 99;
+  }
+  .mobile-menu.open { transform: translateY(0); }
+
+  .mobile-menu a {
+    display: block;
+    padding: 20px 0;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--type);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-menu a:last-child { border-bottom: 0; }
+}
+
 /* ───────────────────────── HERO ───────────────────────── */
 
 .hero {
@@ -1510,6 +1589,19 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   </nav>
 </header>
 
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+</button>
+
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <a href="#designers">Designers</a>
+  <a href="#program">Program</a>
+  <a href="#store">Concept Store</a>
+  <a href="#info">Info</a>
+</div>
+
 <!-- ─────────────────────── HERO ─────────────────────── -->
 <section class="hero" id="top">
   <h1 class="hero-display" aria-label="A platform of objects">
@@ -2093,6 +2185,33 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
       <span class="stockist-mark">${igGlyph}</span>
     `;
     list.appendChild(a);
+  });
+})();
+
+/* ─────────────────────── MOBILE MENU TOGGLE ─────────────────────── */
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+
+  const setOpen = (open) => {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  menu.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => setOpen(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
   });
 })();
 
