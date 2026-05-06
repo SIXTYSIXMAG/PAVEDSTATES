@@ -838,58 +838,230 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   transform: rotate(45deg);
 }
 
-/* Floating image preview that follows the cursor */
+/* Anchored designer preview panel */
 .preview {
   position: fixed;
-  pointer-events: none;
-  width: 320px;
-  height: 400px;
+  top: 50%;
+  right: clamp(20px, 4vw, 56px);
+  width: min(360px, 32vw);
+  max-height: 76vh;
   z-index: 90;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.96);
-  transition: opacity 320ms var(--ease), transform 480ms var(--ease);
-  overflow: hidden;
+  pointer-events: none;
+  transform: translate(24px, -50%);
+  transition:
+    opacity 360ms var(--ease),
+    transform 520ms var(--ease);
+  display: flex;
+  flex-direction: column;
   border-radius: 2px;
   background: var(--bg-2);
   box-shadow:
-    0 30px 80px -20px rgba(0,0,0,0.55),
+    0 30px 80px -20px rgba(0, 0, 0, 0.55),
     0 0 0 1px rgba(199, 99, 86, 0.15);
-}
-.preview img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: saturate(0.92) contrast(1.02);
-  transition: transform 800ms var(--ease);
+  overflow: hidden;
 }
 .preview.visible {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+  transform: translate(0, -50%);
 }
-.preview.visible img {
+.preview-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg-3);
+  flex-shrink: 0;
+}
+.preview-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+  transform: scale(1);
+  transition: transform 1200ms var(--ease);
+}
+.preview.visible .preview-media img {
   transform: scale(1.04);
 }
-.preview::after {
+.preview-media::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, transparent 60%, rgba(72, 13, 19, 0.4)),
+    linear-gradient(180deg, transparent 55%, rgba(72, 13, 19, 0.55)),
     linear-gradient(180deg, rgba(72, 13, 19, 0.18), transparent 30%);
   mix-blend-mode: multiply;
   pointer-events: none;
 }
-.preview-caption {
-  position: absolute;
-  left: 14px; bottom: 14px;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+.preview-body {
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--type-mute) transparent;
+}
+.preview-body::-webkit-scrollbar { width: 4px; }
+.preview-body::-webkit-scrollbar-thumb {
+  background: var(--type-mute);
+  border-radius: 4px;
+}
+.preview-name {
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--type-soft);
-  z-index: 2;
   font-weight: 500;
+  margin: 0;
+}
+.preview-bio {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--type);
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.preview-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 4px 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease), gap 320ms var(--ease);
+}
+.preview-ig:hover,
+.preview-ig:focus-visible {
+  color: var(--type-soft);
+  border-color: var(--type);
+  gap: 12px;
+}
+.preview-ig-handle {
+  font-style: italic;
+}
+.preview-ig-arrow {
+  display: inline-block;
+  font-style: normal;
+  transform: translateY(-1px);
+  transition: transform 320ms var(--ease);
+}
+.preview-ig:hover .preview-ig-arrow,
+.preview-ig:focus-visible .preview-ig-arrow {
+  transform: translate(2px, -3px);
 }
 @media (hover: none) {
   .preview { display: none; }
+}
+@media (max-width: 1024px) {
+  .preview { display: none; }
+}
+
+/* Inline panel — mobile / touch tap-to-expand */
+.designer-panel {
+  grid-column: 1 / -1;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 520ms var(--ease),
+    opacity 360ms var(--ease),
+    padding 420ms var(--ease);
+  padding: 0;
+}
+.designer-panel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 60ch;
+  padding-bottom: 8px;
+}
+.designer-panel-media {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--bg-3);
+  box-shadow:
+    0 18px 48px -16px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(199, 99, 86, 0.12);
+}
+.designer-panel-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+}
+.designer-panel-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 60%, rgba(72, 13, 19, 0.45));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.designer-panel-bio {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--type);
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.designer-panel-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  font-style: italic;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease), gap 320ms var(--ease);
+}
+.designer-panel-ig:active,
+.designer-panel-ig:focus-visible {
+  color: var(--type-soft);
+  border-color: var(--type);
+  gap: 12px;
+}
+.designer-panel-ig .arrow {
+  font-style: normal;
+  transform: translateY(-1px);
+}
+
+@media (hover: none), (max-width: 1024px) {
+  .designer-panel { display: block; }
+  .designer-row.expanded > .designer-panel {
+    max-height: 1800px;
+    opacity: 1;
+    padding: 18px 0 28px;
+  }
+  .designer-row.expanded .designer-mark {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  .designer-row.expanded .designer-name {
+    font-style: italic;
+    letter-spacing: -0.038em;
+  }
 }
 
 @media (max-width: 800px) {
@@ -900,7 +1072,15 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
     padding: 18px 4px;
   }
   .designer-num { display: none; }
-  .designer-mark { display: none; }
+  .designer-mark {
+    display: block;
+    width: 12px;
+    height: 12px;
+    align-self: center;
+    opacity: 0.55;
+  }
+  .designer-panel-inner { gap: 14px; }
+  .designer-panel-media { max-width: 100%; }
 }
 
 /* ───────────────────────── PROGRAM ───────────────────────── */
@@ -1693,11 +1873,20 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   </div>
 </section>
 
-<!-- floating preview image -->
-<div class="preview" id="preview" aria-hidden="true">
-  <img src="" alt="" id="preview-img" />
-  <span class="preview-caption" id="preview-caption"></span>
-</div>
+<!-- floating designer preview -->
+<aside class="preview" id="preview" aria-hidden="true">
+  <div class="preview-media">
+    <img src="" alt="" id="preview-img" />
+  </div>
+  <div class="preview-body">
+    <h3 class="preview-name" id="preview-name"></h3>
+    <p class="preview-bio" id="preview-bio"></p>
+    <a class="preview-ig" id="preview-ig" href="#" target="_blank" rel="noopener">
+      <span class="preview-ig-handle"></span>
+      <span class="preview-ig-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</aside>
 
 <!-- ─────────────────────── PROGRAM ─────────────────────── -->
 <section class="section" id="program">
@@ -2039,19 +2228,97 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 /* ─────────────────────── DESIGNERS LIST ─────────────────────── */
 (function () {
   const designers = [
-    { name: 'Zac Benloulou',                      region: 'Victoria, BC',  img: 'designers/zac-benloulou.jpg' },
-    { name: 'Studio Rotolo, Stefano Giacomello',  region: 'Montreal',      img: 'designers/studio-rotolo.jpg' },
-    { name: 'Jean-Michel Gadoua',                 region: 'Montreal',      img: 'designers/jean-michel-gadoua.jpg' },
-    { name: 'Ceren Arslan, Bureau Betak & EXIT',  region: 'New York',      img: 'designers/ceren-arslan.webp' },
-    { name: 'Hank Beyer and Alex Sizemore', region: 'San Francisco', img: 'designers/hbas-co.png' },
-    { name: 'Malcolm Majer',                      region: 'Baltimore',     img: 'designers/malcolm-majer.jpg' },
-    { name: 'Hannah Bigeleisen',                  region: 'Brooklyn',      img: 'designers/hannah-bigeleisen.webp' },
-    { name: 'Kiki Goti',                          region: 'New York',      img: 'designers/kiki-goti.jpg' },
-    { name: 'Lauren Goodman',                     region: 'Montreal',      img: 'designers/lauren-goodman.jpg' },
-    { name: 'Madeline Isakson',                   region: 'Brooklyn',      img: 'designers/madeline-isakson.webp' },
-    { name: 'The CULT',                           region: 'Mexico City',   img: 'designers/the-cult.webp' },
-    { name: 'marmar',                             region: 'Portland',      img: 'designers/mar-mar.jpg' },
-    { name: 'Homan Rajai & Elena Dendiberia',     region: 'San Francisco', img: 'designers/homan-rajai.jpg' },
+    {
+      name: 'Zac Benloulou',
+      region: 'Victoria, BC',
+      img: 'designers/zac-benloulou.jpg',
+      ig: 'pavilionaudiosystems',
+      bio: 'Zac Benloulou of Pavilion Audio Systems is a designer of bespoke sound systems that merge acoustic performance with a considered approach to space, form, and material. Drawing on a dedicated technical understanding of sound reproduction, his practice approaches audio equipment as a form of architecture, designed to complement and define the environments it inhabits. Working across residential, commercial, and hospitality spaces, Benloulou creates pieces that are responsive to context, function, and atmosphere rather than any fixed material language. Through Pavilion Audio Systems, he seeks to move the sound system beyond pure infrastructure, transforming it into both a sensory experience and a considered design object.'
+    },
+    {
+      name: 'Studio Rotolo, Stefano Giacomello',
+      region: 'Montreal',
+      img: 'designers/studio-rotolo.jpg',
+      ig: 'stefo_rotolo',
+      bio: 'Stefano Giacomello is a Swiss-Italian designer and digital artist, known online as stefo_rotolo and the founder of Studio Rotolo. His practice draws from the iconic designs and architecture of the 70s and 80s, with a special nod to Italian design, balancing clean lines with audacious, sculptural forms. La Collection Rotolo, his first collaboration with Boon Paris, is crafted from travertine and marble alongside bold upholstered pieces, and reflects his dual identity as designer and digital artist by blurring the lines between the digital realm and the physical world.'
+    },
+    {
+      name: 'Jean-Michel Gadoua',
+      region: 'Montreal',
+      img: 'designers/jean-michel-gadoua.jpg',
+      ig: 'youthofthebeast',
+      bio: 'Designer-artist, editor and curator, Jean-Michel Gadoua has earned a reputation as an aesthetic and stylistic leader in the world of contemporary design. The designer by trade began his career in graphic design and music. A fixture of the Montreal experimental music scene in the 2000s, he was artistic director of record label Le Son 666. Gadoua then started working for furniture galleries as a design consultant before taking on the roles of Creative Director, Buyer and Showroom Manager. In 2019, Gadoua started designing furniture and founded Éditions 8888, a creative cell for experimentation, where he publishes some of his own designs and those of several other Quebec designers and artists. In 2026, he founded Galerie Mold, a nomadic gallery showcasing sculptural furniture, decorative objects and fine arts. Inspired by brutalism, postmodernism, science-fiction and music, his designs are minimalist, often monolithic and dark. Since 2024, his practice has taken an increasingly sculptural turn.'
+    },
+    {
+      name: 'Ceren Arslan, Bureau Betak & EXIT',
+      region: 'New York',
+      img: 'designers/ceren-arslan.webp',
+      ig: 'exit__ceren',
+      bio: 'Ceren Arslan is a spatial designer and an architect based in New York City. She is the founder of EXIT, a creative project that focuses on architecture, interior design and spatial design through a multidisciplinary lens both in physical and digital forms. Previously trained in the studios of Kelly Wearstler, KPF and SHoP Architects, she currently works as a designer at the renowned creative agency Bureau Betak where she contributes to large-scale productions across fashion, art and music. Within her professional work, the projects she has worked on include clients such as Gucci, Dior, Victoria’s Secret, Off-White, and Carolina Herrera, as well as artists including The Weeknd and BTS. EXIT’s collaborators include Nike and Les Benjamins, and product designers like 6:AM, Pietro Franceschini and Essesi. Through her work with EXIT, Ceren has been recognized by leading publications like Forbes, Architectural Digest, Elle Decor, Dezeen, Design Wanted and Archdaily while showcasing works at events such as Milan Design Week, NYCxDesign and Zona Maco CDMX.'
+    },
+    {
+      name: 'Hank Beyer and Alex Sizemore',
+      region: 'San Francisco',
+      img: 'designers/hbas-co.png',
+      ig: 'hbas_co',
+      bio: 'Hank Beyer and Alex Sizemore are based in San Francisco and have worked collaboratively since 2017 as an object creation studio with a focus on furniture, product, and sculpture across various mediums. The designers met while studying at the University of Cincinnati, and have since produced a diverse body of work spanning furniture, lighting, homewares, collectible design, art, and technology. Their projects often involve reimagining industrial materials and processes and applying them to domestic objects.'
+    },
+    {
+      name: 'Malcolm Majer',
+      region: 'Baltimore',
+      img: 'designers/malcolm-majer.jpg',
+      ig: 'malcolmmajer',
+      bio: 'Malcolm Majer (b. Chicago, IL 1983) combines carefully crafted forms, using the formal language of sculptural minimalism to create furniture and objects that challenge textbook concepts of functional design. Malcolm received his BFA in Furniture Design from the Rhode Island School of Design in 2005 and in 2007 established an architectural metal fabrication business in Baltimore, MD, that he continues to manage and operate while engaging in his own studio practice. Malcolm has exhibited in both design fairs and art galleries in New York, NY; Baltimore, MD; Provincetown, MA; Chicago, IL; Paris and Brussels. His recent work has also been featured in digital and print design publications such as Dwell Magazine, Surface Magazine, and Metropolis Magazine.'
+    },
+    {
+      name: 'Hannah Bigeleisen',
+      region: 'Brooklyn',
+      img: 'designers/hannah-bigeleisen.webp',
+      ig: 'h.bigeleisen',
+      bio: 'Hannah Bigeleisen designs sculptural furniture and lighting in Brooklyn, NY. Her designs are guided by her background in sculpture to create an elegant, yet playful approach. Bigeleisen’s rich understanding of material, form, color and texture leads itself to collections that are highly crafted and designed for a lifetime of joy and inspiration. Hannah founded her Brooklyn based design practice in 2020 after debuting her first lighting collection at Brooklyn Designs. In that same year, she launched her next collection at Collectible Design and SightUnseen Offsite Online. Her work has been published in Domino Magazine, Architectural Digest, Elle Decor Espana, The T-List, Vogue Magazine, Luxe Magazine and Interior Design Magazine. She is also the Editor of Design at Tussle Magazine, an online platform for critical writing and thought in the arts, and curates the First Fridays show for Dudd Haus, a collective gallery in Philadelphia. Most recently, her work can be found at The Residence at Assembly Line in Brooklyn, and Eleven based in Los Angeles.'
+    },
+    {
+      name: 'Kiki Goti',
+      region: 'New York',
+      img: 'designers/kiki-goti.jpg',
+      ig: 'kikigoti',
+      bio: 'Kiki Goti is a Greek designer, architect and educator currently based in New York City. As a maker, Goti hybridizes materials and fabrication methods to explore relationships between materiality, heritage, and identity. Her creative scope spans furniture, public sculptures, and interior design, where she critically engages with notions of femininity, beauty, and ornamentation, offering innovative interpretations of art historical themes. Goti’s work has been featured in the New York Times, Financial Times, Corriere della Sera, Vogue Living, CNN Style, AD, Wallpaper* and Elle Decor. She currently teaches at Pratt Institute and Parsons New School and has previously taught at Carnegie Mellon and the University of Pennsylvania.'
+    },
+    {
+      name: 'Lauren Goodman',
+      region: 'Montreal',
+      img: 'designers/lauren-goodman.jpg',
+      ig: 'laurengoodgal',
+      bio: 'Lauren Goodman is the lead designer and founder of studio Lauren Goodman, a sculptural furniture studio creating innovative works at the intersection of art and design. Lauren’s process is deeply rooted in the landscape, exploring the relationship between material and place. Utilizing found objects and materials sourced from regional waste streams, each piece emerges through a continuous dialogue with her surrounding environment. Through creative exploration into waste as raw material and the interweaving of foraged objects with first-use materials and refined finishes, she seeks to elevate overlooked resources, transforming them into distinctive, one-of-a-kind works. Lauren’s work moves beyond traditional upcycling, offering elegant, functional design solutions to pressing environmental challenges. Goodman has received many awards. Her ongoing series, Fresh Catch, received a 2025 Azure Magazine People’s Choice Award for best furniture collection. In 2023, she received a Wallpaper Magazine design award for best construction, and in 2022 an AZ Design award of merit, a DesignTO juror’s choice award, and a Wallpaper Magazine design award for material innovation. Her work has been exhibited at Dutch Design Week, NYCxDesign and Milan Design Week as well as with galleries in France, Italy, Canada and the US.'
+    },
+    {
+      name: 'Madeline Isakson',
+      region: 'Brooklyn',
+      img: 'designers/madeline-isakson.webp',
+      ig: 'madeline_isakson',
+      bio: 'Madeline Isakson transforms found objects and materials through emerging and traditional fabrication techniques to explore consumer culture. Ubiquitous, mass-produced items we encounter daily are recontextualized and distorted until they become visible again in a new light, a new form that retains the blurry outlines of cultural memory. Driven by an interest in process and material, her work spans a range of collectible design objects, from lighting and furniture to purely sculptural pieces. Madeline’s work has been exhibited internationally, notably during Milan Design Week, Denfair in Australia, and at the Museum of Craft and Design in San Francisco. It has also been featured in The New York Times, New York Magazine and Wallpaper*, among others. She holds a BFA in Furniture Design from California College of the Arts and an MFA in 3D Design from Cranbrook Academy of Art. She is currently based in Brooklyn, New York.'
+    },
+    {
+      name: 'The CULT',
+      region: 'Mexico City',
+      img: 'designers/the-cult.webp',
+      ig: 'thecult_co',
+      bio: 'Los hermanos Guillermo y Alaide Alejandre viven y trabajan en la Ciudad de México. Su obra abarca desde pequeños objetos cotidianos hasta proyectos arquitectónicos y diseño de interiores. Han trabajado con Herman Miller desde el año 2019, Savvy Studio 2016, Esrawe Studio 2015 y PLDO 2016, contribuyendo con numerosos diseños de habitáculos y manteniéndose activos en diversas colecciones de mobiliario para oficina y hogar. Actualmente diseñan y producen líneas para Steelcase Mexico, así como su propia línea de mobiliario para México y Estados Unidos. También han sido publicados en Elle Mexico, Elle Decor, Glocal, Enea, AD, Dezeen, Metropolis y Design Boom. En 2021 fueron seleccionados para la residencia Laguna con un proyecto regenerativo en la colonia Doctores mediante la producción de piezas en la zona, y han sido galardonados con el Premio de Diseño de Mobiliario del Año de Design Week Mexico 2021–2022.'
+    },
+    {
+      name: 'marmar',
+      region: 'Portland',
+      img: 'designers/mar-mar.jpg',
+      ig: 'by_mar_mar',
+      bio: 'marmar studio is a furniture and object design practice centered on cultivating endearment to the inanimate. By refining forms to their essentials, marmar creates pieces that align utility and character, where the act of use becomes an expression of personality. The studio’s ethos is to craft playful, beautiful objects that come alive. marmar studio’s practice sits at the intersection of minimalism and familiarity, exploring the bonds people form with the objects they see and use every day. At the heart of the work is the belief that we are naturally inclined to endow the inanimate with spirit. marmar’s visual language consciously anthropomorphizes mechanical, architectural, and animal forms, inviting viewers to see themselves reflected in the built environment. This spark of recognition inspires joyful intimacy with the inanimate, an emotional reaction marmar studio deeply experiences and strives to evoke through its work. marmar studio is based in Portland, Oregon.'
+    },
+    {
+      name: 'Homan Rajai & Elena Dendiberia',
+      region: 'San Francisco',
+      img: 'designers/homan-rajai.jpg',
+      ig: 'studioahead',
+      bio: 'Studio AHEAD is a San Francisco-based art and design collective founded by Homan Rajai and Elena Dendiberia. The studio’s approach is "borderless" in that its roots are far-flung yet deeply embedded in regionality. Drawing from diasporic experiences, the founders believe strongly that there is no universal idea of functionality that fits all cultures and people. What remains constant is an appreciation of tradition and craftsmanship. Studio AHEAD launched its production arm in 2019, and in 2020 began publishing California: A Journal, which chronicles Northern California’s vibrant cultural history. The biennial Same Blue as the Sky began in 2023 as a way to celebrate the regional artists who continually inspire the studio.'
+    },
   ];
 
   const list = document.getElementById('designers-list');
@@ -2062,6 +2329,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
     row.className = 'designer-row';
     row.dataset.img = d.img || '';
     row.dataset.name = d.name;
+    row.dataset.bio = d.bio || '';
+    row.dataset.ig = d.ig || '';
 
     const ampered = d.name.replace(/&/g, '<span class="ampersand">&amp;</span>');
 
@@ -2071,63 +2340,127 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
       <span class="designer-region">${d.region}</span>
       <span class="designer-mark"></span>
     `;
+
+    // Inline panel for mobile / touch tap-to-expand
+    const panel = document.createElement('div');
+    panel.className = 'designer-panel';
+    const inner = document.createElement('div');
+    inner.className = 'designer-panel-inner';
+    if (d.img) {
+      const media = document.createElement('div');
+      media.className = 'designer-panel-media';
+      const img = document.createElement('img');
+      img.src = d.img;
+      img.alt = d.name;
+      img.loading = 'lazy';
+      media.appendChild(img);
+      inner.appendChild(media);
+    }
+    const bioP = document.createElement('p');
+    bioP.className = 'designer-panel-bio';
+    bioP.textContent = d.bio || '';
+    inner.appendChild(bioP);
+    if (d.ig) {
+      const a = document.createElement('a');
+      a.className = 'designer-panel-ig';
+      a.href = 'https://instagram.com/' + d.ig;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('aria-label', d.name + ' on Instagram');
+      a.innerHTML = `<span>@${d.ig}</span><span class="arrow" aria-hidden="true">↗</span>`;
+      inner.appendChild(a);
+    }
+    panel.appendChild(inner);
+    row.appendChild(panel);
+
     list.appendChild(row);
   });
 
-  /* Floating preview that follows the cursor */
+  /* Tap-to-expand for mobile / touch (no-op visual on desktop, where CSS hides the inline panel) */
+  list.addEventListener('click', (e) => {
+    if (e.target.closest('.designer-panel-ig')) return; // let the IG link open normally
+    if (e.target.closest('.designer-panel')) return;     // taps inside the panel don't collapse it
+    const row = e.target.closest('.designer-row');
+    if (!row) return;
+    const wasOpen = row.classList.contains('expanded');
+    list.querySelectorAll('.designer-row.expanded').forEach((r) => r.classList.remove('expanded'));
+    if (!wasOpen) row.classList.add('expanded');
+  });
+
+  /* Anchored preview panel — image, bio, and clickable IG handle */
   const preview = document.getElementById('preview');
   const previewImg = document.getElementById('preview-img');
-  const previewCap = document.getElementById('preview-caption');
+  const previewName = document.getElementById('preview-name');
+  const previewBio = document.getElementById('preview-bio');
+  const previewIg = document.getElementById('preview-ig');
+  const previewIgHandle = previewIg ? previewIg.querySelector('.preview-ig-handle') : null;
 
-  let mouseX = 0, mouseY = 0;
-  let curX = 0, curY = 0;
-  let active = false;
   let activeRow = null;
+  let hideTimer = null;
+  let panelHovered = false;
 
-  const lerp = (a, b, t) => a + (b - a) * t;
+  const showFor = (row) => {
+    if (!row) return;
+    if (row === activeRow) return;
+    activeRow = row;
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
 
-  const animate = () => {
-    curX = lerp(curX, mouseX, 0.18);
-    curY = lerp(curY, mouseY, 0.18);
-    preview.style.left = curX + 'px';
-    preview.style.top = curY + 'px';
-    requestAnimationFrame(animate);
-  };
-  requestAnimationFrame(animate);
+    const img = row.dataset.img;
+    const name = row.dataset.name || '';
+    const bio = row.dataset.bio || '';
+    const ig = row.dataset.ig || '';
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (!active) {
-      curX = mouseX;
-      curY = mouseY;
+    if (img) {
+      previewImg.src = img;
+      previewImg.alt = name;
+    } else {
+      previewImg.removeAttribute('src');
+      previewImg.alt = '';
     }
-  });
+    previewName.textContent = name;
+    previewBio.textContent = bio;
+
+    if (ig) {
+      previewIgHandle.textContent = '@' + ig;
+      previewIg.href = 'https://instagram.com/' + ig;
+      previewIg.style.display = '';
+    } else {
+      previewIg.style.display = 'none';
+    }
+
+    if (preview.scrollTop) preview.scrollTop = 0;
+    if (preview.querySelector('.preview-body')) {
+      preview.querySelector('.preview-body').scrollTop = 0;
+    }
+    preview.classList.add('visible');
+    preview.setAttribute('aria-hidden', 'false');
+  };
+
+  const scheduleHide = () => {
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      if (panelHovered) return;
+      preview.classList.remove('visible');
+      preview.setAttribute('aria-hidden', 'true');
+      activeRow = null;
+    }, 140);
+  };
 
   list.addEventListener('mouseover', (e) => {
     const row = e.target.closest('.designer-row');
     if (!row) return;
-    if (row === activeRow) return;
-    const img = row.dataset.img;
-    const name = row.dataset.name;
-    if (!img) {
-      preview.classList.remove('visible');
-      active = false;
-      activeRow = row;
-      return;
-    }
-    previewImg.src = img;
-    previewImg.alt = name;
-    previewCap.textContent = name;
-    preview.classList.add('visible');
-    active = true;
-    activeRow = row;
+    showFor(row);
   });
 
-  list.addEventListener('mouseleave', () => {
-    preview.classList.remove('visible');
-    active = false;
-    activeRow = null;
+  list.addEventListener('mouseleave', scheduleHide);
+
+  preview.addEventListener('mouseenter', () => {
+    panelHovered = true;
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+  });
+  preview.addEventListener('mouseleave', () => {
+    panelHovered = false;
+    scheduleHide();
   });
 })();
 
