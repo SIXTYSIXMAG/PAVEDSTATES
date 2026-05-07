@@ -460,6 +460,29 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   text-transform: uppercase;
   line-height: 1.45;
 }
+a.info-value {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 320ms var(--ease), border-color 320ms var(--ease);
+}
+a.info-value:hover,
+a.info-value:focus-visible {
+  color: var(--type-soft);
+  border-bottom-color: var(--type);
+}
+a.info-value .info-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 500;
+  letter-spacing: 0;
+  transform: translateY(-1px);
+  transition: transform 320ms var(--ease);
+}
+a.info-value:hover .info-arrow,
+a.info-value:focus-visible .info-arrow {
+  transform: translate(2px, -3px);
+}
 .hero-foot .hours-mini {
   display: grid;
   gap: 4px;
@@ -1496,6 +1519,118 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   border-color: var(--type);
 }
 
+/* ───────────────────────── FIND US (map block) ───────────────────────── */
+.find-us {
+  display: grid;
+  grid-template-columns: 0.7fr 1.6fr;
+  gap: 56px;
+  align-items: start;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid var(--line);
+}
+.find-us-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.find-us-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--type-mute);
+  font-weight: 600;
+}
+.find-us-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--type);
+  margin: 0;
+}
+.find-us-address {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--type-soft);
+  margin: 0;
+  letter-spacing: 0.005em;
+}
+.find-us-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+  text-decoration: none;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease), gap 320ms var(--ease);
+}
+.find-us-link:hover,
+.find-us-link:focus-visible {
+  color: var(--type-soft);
+  border-color: var(--type);
+  gap: 12px;
+}
+.find-us-link .arrow {
+  font-style: normal;
+  transform: translateY(-1px);
+  transition: transform 320ms var(--ease);
+}
+.find-us-link:hover .arrow,
+.find-us-link:focus-visible .arrow {
+  transform: translate(2px, -3px);
+}
+.find-us-map {
+  position: relative;
+  display: block;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--bg-2);
+  box-shadow:
+    0 28px 70px -22px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(199, 99, 86, 0.15);
+  transition: transform 600ms var(--ease), box-shadow 600ms var(--ease);
+}
+.find-us-map:hover,
+.find-us-map:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 36px 84px -22px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(199, 99, 86, 0.25);
+}
+.find-us-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.find-us-map .pin {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--type-soft);
+  background: rgba(72, 13, 19, 0.78);
+  padding: 7px 11px;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 900px) {
+  .find-us {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 56px;
+    margin-bottom: 56px;
+  }
+}
+
 .sponsors {
   border-top: 1px solid var(--line);
   margin-top: 80px;
@@ -1797,7 +1932,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
     <div class="info-stack">
       <div class="info-block">
         <span class="info-label">Where</span>
-        <strong class="info-value">The MART, Chicago<br>Suite 121 &amp; South Lobby</strong>
+        <a class="info-value" href="https://www.google.com/maps/search/?api=1&amp;query=THE+MART+222+W+Merchandise+Mart+Plaza+Chicago" target="_blank" rel="noopener" aria-label="The MART, Chicago — open in Google Maps">
+          The MART, Chicago<br>Suite 121 &amp; South Lobby
+          <span class="info-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
       <div class="info-block">
         <span class="info-label">When</span>
@@ -2096,6 +2234,21 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
       <span class="index">04</span>
       Info
     </h2>
+  </div>
+
+  <div class="find-us reveal">
+    <div class="find-us-meta">
+      <div class="find-us-label">Find Us</div>
+      <h3 class="find-us-title">Suite 121 &amp; South Lobby</h3>
+      <p class="find-us-address">THE MART<br>222 W Merchandise Mart Plaza<br>Chicago, IL 60654</p>
+      <a class="find-us-link" href="https://www.google.com/maps/search/?api=1&amp;query=THE+MART+222+W+Merchandise+Mart+Plaza+Chicago" target="_blank" rel="noopener">
+        Open in Google Maps <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <a class="find-us-map" href="https://www.google.com/maps/search/?api=1&amp;query=THE+MART+222+W+Merchandise+Mart+Plaza+Chicago" target="_blank" rel="noopener" aria-label="The MART floor plan — open location in Google Maps">
+      <img src="images/pavedstatesmap.jpg" alt="Floor plan of THE MART showing Paved States installation in Suite 121 and the South Lobby" loading="lazy" />
+      <span class="pin">Suite 121</span>
+    </a>
   </div>
 
   <div class="info-grid reveal">
