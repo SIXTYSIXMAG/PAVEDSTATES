@@ -1,58 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Paved States × Haworth DesignLab—NeoCon 2026</title>
-<meta name="description" content="Paved States × Haworth DesignLab at NeoCon 2026. Edition 02—curated by Patricia Urquiola and Chris Force. Presented by Sixtysix and Haworth at THE MART, Chicago. June 7–10, 2026." />
-<link rel="icon" href="brand_assets/logo.png" />
-<link rel="canonical" href="https://pavedstates.com/" />
-<meta name="theme-color" content="#480D13" />
-
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Paved States" />
-<meta property="og:url" content="https://pavedstates.com/" />
-<meta property="og:title" content="Paved States × Haworth DesignLab—NeoCon 2026" />
-<meta property="og:description" content="Edition 02—curated by Patricia Urquiola and Chris Force. Presented by Sixtysix and Haworth at THE MART, Chicago. June 7–10, 2026." />
-<meta property="og:image" content="https://pavedstates.com/images/paved-states-by-chris-force-1.jpg" />
-<meta property="og:image:alt" content="Paved States × Haworth DesignLab installation at NeoCon" />
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Paved States — A platform of objects</title>
+<meta name="description" content="Paved States is Sixtysix magazine's curatorial + retail platform, championing emerging designers through immersive exhibition experiences. Edition 02 at NeoCon 2026 won the Interior Design Magazine HiP Award." />
+<meta property="og:title" content="Paved States — A platform of objects" />
+<meta property="og:description" content="Paved States is Sixtysix magazine's curatorial + retail platform — championing emerging designers through immersive exhibition experiences." />
+<meta property="og:image" content="images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-1.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Paved States × Haworth DesignLab—NeoCon 2026" />
-<meta name="twitter:description" content="Edition 02—June 7–10, 2026 at THE MART, Chicago." />
-<meta name="twitter:image" content="https://pavedstates.com/images/paved-states-by-chris-force-1.jpg" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Paved States × Haworth DesignLab—Edition 02",
-  "startDate": "2026-06-07",
-  "endDate": "2026-06-10",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "url": "https://pavedstates.com/",
-  "description": "Paved States × Haworth DesignLab at NeoCon 2026. Edition 02—curated by Patricia Urquiola and Chris Force. Presented by Sixtysix and Haworth at THE MART, Chicago.",
-  "image": "https://pavedstates.com/images/paved-states-by-chris-force-1.jpg",
-  "location": {
-    "@type": "Place",
-    "name": "THE MART",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "222 W Merchandise Mart Plaza",
-      "addressLocality": "Chicago",
-      "addressRegion": "IL",
-      "postalCode": "60654",
-      "addressCountry": "US"
-    }
-  },
-  "organizer": [
-    { "@type": "Organization", "name": "Sixtysix", "url": "https://sixtysixmag.com/" },
-    { "@type": "Organization", "name": "Haworth", "url": "https://www.haworth.com/" }
-  ],
-  "performer": { "@type": "Organization", "name": "Paved States" }
-}
-</script>
+<link rel="icon" href="brand_assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="brand_assets/favicon-180.png" />
 
 <style>
 :root {
@@ -64,112 +22,56 @@
   --type-mute: #8a4036;
   --line:      rgba(199, 99, 86, 0.22);
   --line-2:    rgba(199, 99, 86, 0.10);
-  --gut:       28px;
-  --gut-lg:    56px;
-  --max-w:     1300px;
-  --side-pad:  max(var(--gut), calc((100vw - var(--max-w)) / 2));
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --side-pad:  clamp(20px, 5vw, 64px);
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-*, *::before, *::after {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
+  margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--type);
   font-size: 15px;
   line-height: 1.5;
   letter-spacing: 0.005em;
-  overflow-x: hidden;
-  min-height: 100vh;
-  font-feature-settings: "kern" 1, "liga" 1, "tnum" 1;
+  -webkit-font-smoothing: antialiased;
 }
-
-/* Grain overlay—fixed, non-interactive */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.07;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-
-/* Soft radial atmosphere */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(80vw 60vh at 18% 8%, rgba(199, 99, 86, 0.10), transparent 60%),
-    radial-gradient(70vw 80vh at 92% 92%, rgba(199, 99, 86, 0.06), transparent 65%);
-}
-
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-
+img { display: block; max-width: 100%; }
+a { color: inherit; }
 .inline-link {
   color: var(--type);
   border-bottom: 1px solid var(--line);
+  text-decoration: none;
   padding-bottom: 1px;
-  transition: color 300ms var(--ease), border-color 300ms var(--ease);
+  transition: color 280ms var(--ease), border-color 280ms var(--ease);
 }
-.inline-link:hover {
-  color: var(--type-soft);
-  border-color: var(--type);
-}
-
+.inline-link:hover { color: var(--type-soft); border-color: var(--type); }
 ::selection { background: var(--type); color: var(--bg); }
 
-/* ───────────────────────── HEADER ───────────────────────── */
-
+/* ─────── NAV ─────── */
 .nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 32px;
-  padding: 18px var(--side-pad);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  background: rgba(72, 13, 19, 0.65);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; padding: 18px 32px;
 }
-
-.nav-left {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 32px;
+.nav .nav-left { font-size: 0; pointer-events: none; }
+.nav a {
+  text-decoration: none; font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--type); font-weight: 500;
+  position: relative; padding: 6px 0;
+  transition: color 250ms var(--ease);
 }
-.nav-right {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 32px;
+.nav .nav-right { justify-self: end; }
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px; background: var(--type);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 400ms var(--ease);
 }
-.nav-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+.nav a:hover { color: var(--type-soft); }
+.nav a:hover::after { transform: scaleX(1); }
+.logo-wrap::after { display: none !important; content: none !important; }
 .logo-wrap {
   position: relative;
   display: inline-block;
@@ -177,225 +79,90 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   aspect-ratio: 3621 / 2000;
   transform-origin: center;
 }
-.logo-wrap::after { display: none !important; content: none !important; }
-
 .logo-img {
   position: absolute;
   inset: 0;
   height: 100%;
   width: 100%;
   object-fit: contain;
-  display: block;
-  user-select: none;
   transition: opacity 500ms var(--ease);
 }
-.logo-img.alt {
-  opacity: 0;
-}
+.logo-img.alt { opacity: 0; }
 .logo-wrap:hover .logo-img.primary { opacity: 0; }
-.logo-wrap:hover .logo-img.alt     { opacity: 1; }
+.logo-wrap:hover .logo-img.alt { opacity: 1; }
 
 @media (max-width: 700px) {
+  .nav { padding: 14px 18px; grid-template-columns: 1fr auto 1fr; }
   .logo-wrap { height: 88px; }
 }
 
-.nav a, .nav button {
-  position: relative;
-  color: var(--type);
-  transition: color 250ms var(--ease);
-  font-weight: 500;
-}
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -6px;
-  height: 1px;
-  background: var(--type);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 400ms var(--ease);
-}
-.nav a:hover { color: var(--type-soft); }
-.nav a:hover::after { transform: scaleX(1); }
-
-.clock {
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.16em;
-  color: var(--type-mute);
-}
-.clock .dot {
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--type);
-  margin-right: 8px;
-  vertical-align: middle;
-  animation: pulse 2.4s var(--ease) infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(0.85); }
-  50%      { opacity: 1.0; transform: scale(1); }
-}
-
-@media (max-width: 900px) {
-  .nav {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    text-align: center;
-    padding: 14px var(--side-pad);
-  }
-  .nav-center { order: -1; }
-  .nav-left, .nav-right {
-    justify-content: center;
-    gap: 18px;
-  }
-}
-
-/* Hamburger toggle (mobile only) */
-.nav-toggle {
-  display: none;
-  width: 32px;
-  height: 32px;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  padding: 6px;
-  z-index: 101;
-}
-.nav-toggle-bar {
-  display: block;
-  width: 100%;
-  height: 1.5px;
-  background: var(--type);
-  margin: 4px 0;
-  transition: transform 350ms var(--ease), opacity 250ms var(--ease);
-  transform-origin: center;
-}
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
-  transform: translateY(5.5px) rotate(45deg);
-}
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
-  transform: translateY(-5.5px) rotate(-45deg);
-}
-
-.mobile-menu { display: none; }
-
-@media (max-width: 700px) {
-  .nav-left, .nav-right { display: none !important; }
-  .nav-toggle {
-    display: flex !important;
-    position: fixed;
-    left: var(--side-pad);
-    top: 14px;
-    width: 32px;
-    height: 88px;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding: 6px 0;
-    z-index: 200;
-  }
-
-  .mobile-menu {
-    display: block;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    padding: 110px var(--side-pad) 40px;
-    background: rgba(40, 6, 11, 0.96);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
-    transform: translateY(-100%);
-    transition: transform 420ms var(--ease);
-    z-index: 99;
-  }
-  .mobile-menu.open { transform: translateY(0); }
-
-  .mobile-menu a {
-    display: block;
-    padding: 20px 0;
-    font-size: 22px;
-    line-height: 1;
-    color: var(--type);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    text-transform: none;
-    border-bottom: 1px solid var(--line);
-  }
-  .mobile-menu a:last-child { border-bottom: 0; }
-}
-
-/* ───────────────────────── HERO ───────────────────────── */
-
+/* ─────── HERO ─────── */
 .hero {
   position: relative;
-  min-height: 100vh;
-  padding: 180px var(--side-pad) 60px;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  z-index: 1;
+  height: 100vh;
+  min-height: 640px;
+  width: 100%;
+  overflow: hidden;
 }
-
-.hero-eyebrow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 22px;
-  font-size: 11px;
-  letter-spacing: 0.22em;
+.hero-slides {
+  position: absolute; inset: 0;
+}
+.hero-slide {
+  position: absolute; inset: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1400ms var(--ease);
+  filter: saturate(0.95) contrast(1.03);
+  will-change: opacity;
+}
+.hero-slide.active { opacity: 1; }
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(42,6,10,0.55) 0%, rgba(42,6,10,0.12) 28%, rgba(42,6,10,0.25) 60%, rgba(42,6,10,0.92) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto auto auto;
+  padding: 180px clamp(20px, 5vw, 64px) 56px;
+  color: #fff;
+}
+.hero-mark {
+  font-size: clamp(11px, 1.1vw, 13px);
+  letter-spacing: 0.42em;
   text-transform: uppercase;
   color: var(--type-soft);
-  font-weight: 500;
-  padding-top: 24px;
+  font-weight: 600;
+  margin: 0 0 18px;
+  align-self: end;
 }
-.hero-eyebrow span {
-  position: relative;
-  padding-right: 22px;
-}
-.hero-eyebrow span:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0; top: 50%;
-  width: 4px; height: 4px;
-  background: var(--type);
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-
 .hero-display {
-  font-weight: 900;
-  font-size: clamp(2.2rem, 7.8vw, 8rem);
-  line-height: 1.02;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 5rem);
+  line-height: 1;
   letter-spacing: -0.04em;
   margin: 0;
-  color: var(--type);
-  text-align: center;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-}
-.hero-display .line-1,
-.hero-display .line-2 {
-  display: block;
+  color: #fff;
   white-space: nowrap;
 }
-.hero-display .line-1 {
-  font-weight: 400;
+.hero-display em {
+  font-style: italic;
+  font-weight: 300;
   color: var(--type-soft);
-  letter-spacing: -0.03em;
 }
 .hero-display .rotator-word {
   display: inline-block;
-  position: relative;
   font-style: italic;
-  font-weight: 900;
-  color: var(--type);
-  transition: opacity 600ms var(--ease), transform 600ms var(--ease), filter 600ms var(--ease);
+  font-weight: 300;
+  color: var(--type-soft);
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease), filter 700ms var(--ease);
 }
 .hero-display .rotator-word.exit {
   opacity: 0;
@@ -409,1489 +176,344 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .hero-display .period {
   display: inline-block;
-  color: var(--type);
+  color: #fff;
   font-style: normal;
-  font-weight: 900;
-  margin-left: -0.04em;
+  font-weight: 600;
 }
-
-.hero-foot {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr auto;
-  gap: 36px;
-  align-items: start;
-  padding-top: 60px;
-  font-size: 13px;
-  line-height: 1.55;
-}
-.hero-foot .where {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-}
-.hero-foot .where strong {
-  display: block;
-  margin-top: 8px;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  color: var(--type);
-}
-.hero-foot .info-stack {
-  display: grid;
-  gap: 26px;
-}
-.hero-foot .info-block .info-label {
-  display: block;
+.hero-presented {
+  margin: 28px 0 0;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--type-soft);
   font-weight: 500;
-  margin-bottom: 8px;
+  opacity: 0.85;
 }
-.hero-foot .info-block .info-value {
-  display: block;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  color: var(--type);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1.45;
-}
-a.info-value {
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: color 320ms var(--ease), border-color 320ms var(--ease);
-}
-a.info-value:hover,
-a.info-value:focus-visible {
-  color: var(--type-soft);
-  border-bottom-color: var(--type);
-}
-a.info-value .info-arrow {
-  display: inline-block;
-  margin-left: 6px;
-  font-weight: 500;
-  letter-spacing: 0;
-  transform: translateY(-1px);
-  transition: transform 320ms var(--ease);
-}
-a.info-value:hover .info-arrow,
-a.info-value:focus-visible .info-arrow {
-  transform: translate(2px, -3px);
-}
-.hero-foot .hours-mini {
-  display: grid;
-  gap: 4px;
-  font-feature-settings: "tnum" 1;
-}
-.hero-foot .hours-mini .hr {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 16px;
-  align-items: baseline;
-}
-.hero-foot .hours-mini .day {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--type);
-  font-weight: 700;
-}
-.hero-foot .hours-mini .day .note {
-  color: var(--type-soft);
-  font-weight: 400;
-  margin-left: 6px;
-  letter-spacing: 0.12em;
-}
-.hero-foot .hours-mini .time {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-  font-weight: 500;
-  white-space: nowrap;
-}
-.hero-foot .scroll-cue { align-self: end; }
-.hero-foot .scroll-cue {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-foot .scroll-cue .arrow {
-  display: inline-block;
-  width: 1px; height: 28px;
-  background: linear-gradient(to bottom, var(--type), transparent);
-  position: relative;
-  animation: drop 2.8s var(--ease) infinite;
-}
-.hero-foot .scroll-cue .arrow::after {
-  content: "";
-  position: absolute;
-  left: 50%; bottom: 0;
-  width: 6px; height: 6px;
-  border-right: 1px solid var(--type);
-  border-bottom: 1px solid var(--type);
-  transform: translateX(-50%) rotate(45deg);
-}
-@keyframes drop {
-  0%   { opacity: 0; transform: translateY(-6px); }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { opacity: 0; transform: translateY(8px); }
-}
-
-.hero-rule {
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 0;
-  height: 1px;
-  background: var(--line);
-}
-
 @media (max-width: 700px) {
-  .hero-foot { grid-template-columns: 1fr; gap: 28px; }
-  .hero-foot .scroll-cue { display: none; }
+  .hero-overlay { padding-top: 110px; padding-bottom: 36px; }
 }
 
-/* ───────────────────────── INTRO BLOCK ───────────────────────── */
-
-.intro {
-  position: relative;
-  padding: 100px var(--side-pad) 100px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.6fr 1fr;
-  gap: 56px;
+/* ─────── BAND (quote) ─────── */
+.band {
+  padding: 80px clamp(20px, 5vw, 64px);
   border-bottom: 1px solid var(--line);
-  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 2.6fr;
+  gap: 56px;
+  align-items: start;
 }
-
-.intro-label {
-  font-size: 11px;
-  letter-spacing: 0.22em;
+.band-side {
+  font-size: 10px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--type-mute);
-  font-weight: 500;
-  position: sticky;
-  top: 160px;
-  align-self: start;
+  font-weight: 600;
 }
-.intro-label .num {
-  display: block;
-  font-size: 11px;
-  margin-bottom: 6px;
-  color: var(--type-soft);
-  font-feature-settings: "tnum" 1;
-}
-
-.intro-body p {
-  font-size: clamp(1.25rem, 1.9vw, 1.75rem);
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  color: var(--type);
+.band-quote {
+  font-size: clamp(1.25rem, 1.95vw, 1.8rem);
   font-weight: 400;
-  text-wrap: pretty;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  color: var(--type);
+  margin: 0 0 22px;
+  text-wrap: balance;
+  max-width: 36ch;
 }
-.intro-body p + p { margin-top: 1em; }
-.intro-body em {
+.band-quote em { font-style: italic; color: var(--type-soft); }
+.band-credit {
+  font-size: clamp(1.25rem, 1.95vw, 1.8rem);
+  font-weight: 400;
   font-style: italic;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
   color: var(--type-soft);
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .band { grid-template-columns: 1fr; gap: 20px; padding: 48px 18px; }
 }
 
-.metadata {
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-  color: var(--type-soft);
+/* ─────── MASONRY (no crop — keeps native aspect ratios) ─────── */
+.masonry {
+  columns: 3;
+  column-gap: 14px;
 }
-.metadata dl {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
+@media (max-width: 1200px) { .masonry { columns: 3; } }
+@media (max-width: 900px)  { .masonry { columns: 2; } }
+@media (max-width: 600px)  { .masonry { columns: 1; } }
+
+.masonry figure {
+  margin: 0 0 14px;
+  break-inside: avoid;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-2);
+  border-radius: 1px;
+  cursor: zoom-in;
+  display: block;
+  transition: transform 500ms var(--ease);
 }
-.metadata .row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
+.masonry figure:hover { transform: translateY(-2px); }
+.masonry figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0.92) contrast(1.02);
+  transition: transform 1000ms var(--ease);
 }
-.metadata dt {
+.masonry figure:hover img { transform: scale(1.04); }
+.masonry figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 28px 14px 12px;
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--type-mute);
-  font-weight: 600;
-}
-.metadata dd {
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  color: var(--type);
-  font-weight: 500;
-}
-.metadata dd .secondary {
-  display: block;
   color: var(--type-soft);
-  font-weight: 400;
+  background: linear-gradient(180deg, transparent, rgba(42,6,10,0.86));
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+  pointer-events: none;
 }
-.metadata .hours {
-  display: grid;
-  gap: 4px;
-  font-variant-numeric: tabular-nums;
-}
-.metadata .hours .hour-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 16px;
-}
-.metadata .hours .day {
-  font-weight: 600;
-  color: var(--type);
-}
-.metadata .hours .time {
-  color: var(--type-soft);
-  font-weight: 400;
+.masonry figure:hover figcaption { opacity: 1; transform: translateY(0); }
+@media (max-width: 800px) {
+  .masonry figcaption { opacity: 1; transform: none; padding: 16px 10px 8px; }
 }
 
-@media (max-width: 1000px) {
-  .intro { grid-template-columns: 1fr; gap: 40px; }
-  .intro-label { position: static; }
-}
-
-/* ───────────────────────── MARQUEE ───────────────────────── */
-
-.marquee {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 18px 0;
-  background: var(--bg-2);
-  position: relative;
-  z-index: 1;
-}
-.marquee-track {
-  display: inline-block;
-  animation: scroll-x 50s linear infinite;
-  font-size: 14px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--type);
-  font-weight: 500;
-}
-.marquee-track span {
-  display: inline-block;
-  padding: 0 26px;
-}
-.marquee-track .dot {
-  color: var(--type-mute);
-  font-size: 8px;
-  vertical-align: middle;
-}
-@keyframes scroll-x {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ───────────────────────── SECTION SHELL ───────────────────────── */
-
+/* ─────── SECTION ─────── */
 .section {
-  position: relative;
-  padding: 120px var(--side-pad);
-  border-bottom: 1px solid var(--line);
-  z-index: 1;
+  padding: 100px clamp(20px, 5vw, 64px) 0;
 }
-
+.section:last-of-type { padding-bottom: 80px; }
 .section-head {
   display: grid;
-  grid-template-columns: 0.9fr 2.5fr;
+  grid-template-columns: 1fr 2.5fr;
   gap: 56px;
-  margin-bottom: 80px;
-  align-items: start;
-}
-.section-head .section-intro {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.55;
-  color: var(--type-soft);
-  max-width: 60ch;
-  margin: 0;
-}
-.section-head .section-intro em {
-  font-style: italic;
-  color: var(--type-soft);
-}
-.section-num {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  font-weight: 500;
-  margin: 0;
-}
-.section-num .index {
-  display: block;
-  color: var(--type-soft);
-  margin-bottom: 8px;
-  font-feature-settings: "tnum" 1;
+  align-items: baseline;
+  margin-bottom: 36px;
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
 }
 .section-title {
-  font-weight: 900;
-  font-size: clamp(2.6rem, 7.5vw, 7rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 0;
   color: var(--type);
 }
 .section-title em {
-  font-weight: 400;
-  color: var(--type-soft);
   font-style: italic;
-}
-
-@media (max-width: 800px) {
-  .section-head { grid-template-columns: 1fr; gap: 22px; }
-}
-
-/* ───────────────────────── DESIGNERS ───────────────────────── */
-
-.designers-intro {
-  display: grid;
-  grid-template-columns: 0.9fr 2.5fr;
-  gap: 56px;
-  margin-bottom: 80px;
-  align-items: start;
-}
-.designers-intro p {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.55;
-  color: var(--type-soft);
-  max-width: 60ch;
-}
-
-.designers-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
-  border-top: 1px solid var(--line-2);
-}
-.designer-row {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: 28px;
-  align-items: baseline;
-  padding: 26px 4px;
-  border-bottom: 1px solid var(--line-2);
-  cursor: pointer;
-  transition: padding-left 500ms var(--ease), color 400ms var(--ease);
-  position: relative;
-}
-.designer-row::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 0;
-  background: var(--type);
-  opacity: 0.04;
-  transition: width 500ms var(--ease);
-  pointer-events: none;
-}
-.designer-row:hover { padding-left: 24px; }
-.designer-row:hover::before { width: 100%; }
-.designer-row:hover .designer-name {
-  font-style: italic;
-  letter-spacing: -0.038em;
-}
-.designer-num {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--type-mute);
-  font-feature-settings: "tnum" 1;
-  font-weight: 500;
-}
-.designer-name {
-  font-size: clamp(1.6rem, 4vw, 3.6rem);
-  font-weight: 600;
-  line-height: 1.05;
-  color: var(--type);
-  letter-spacing: -0.03em;
-  transition: font-style 300ms var(--ease), letter-spacing 400ms var(--ease);
-}
-.designer-name .ampersand {
-  font-style: italic;
-  color: var(--type-soft);
   font-weight: 300;
-}
-.designer-region {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
   color: var(--type-soft);
-  font-weight: 500;
-  white-space: nowrap;
 }
-.designer-mark {
-  width: 14px;
-  height: 14px;
-  position: relative;
-  opacity: 0.4;
-  transition: opacity 400ms var(--ease), transform 600ms var(--ease);
-}
-.designer-mark::before,
-.designer-mark::after {
-  content: "";
-  position: absolute;
-  background: var(--type);
-}
-.designer-mark::before {
-  left: 50%; top: 0; bottom: 0;
-  width: 1px;
-  transform: translateX(-50%);
-}
-.designer-mark::after {
-  top: 50%; left: 0; right: 0;
-  height: 1px;
-  transform: translateY(-50%);
-}
-.designer-row:hover .designer-mark {
-  opacity: 1;
-  transform: rotate(45deg);
-}
-
-/* Anchored designer preview panel */
-.preview {
-  position: fixed;
-  top: 50%;
-  right: clamp(20px, 4vw, 56px);
-  width: min(360px, 32vw);
-  max-height: 76vh;
-  z-index: 90;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(24px, -50%);
-  transition:
-    opacity 360ms var(--ease),
-    transform 520ms var(--ease);
-  display: flex;
-  flex-direction: column;
-  border-radius: 2px;
-  background: var(--bg-2);
-  box-shadow:
-    0 30px 80px -20px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(199, 99, 86, 0.15);
-  overflow: hidden;
-}
-.preview.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(0, -50%);
-}
-.preview-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: var(--bg-3);
-  flex-shrink: 0;
-}
-.preview-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.92) contrast(1.02);
-  transform: scale(1);
-  transition: transform 1200ms var(--ease);
-}
-.preview.visible .preview-media img {
-  transform: scale(1.04);
-}
-.preview-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, transparent 55%, rgba(72, 13, 19, 0.55)),
-    linear-gradient(180deg, rgba(72, 13, 19, 0.18), transparent 30%);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-.preview-body {
-  padding: 22px 22px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  overflow-y: auto;
-  flex: 1 1 auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--type-mute) transparent;
-}
-.preview-body::-webkit-scrollbar { width: 4px; }
-.preview-body::-webkit-scrollbar-thumb {
-  background: var(--type-mute);
-  border-radius: 4px;
-}
-.preview-name {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-  font-weight: 500;
-  margin: 0;
-}
-.preview-bio {
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--type);
-  font-weight: 400;
-  margin: 0;
-  letter-spacing: -0.005em;
-}
-.preview-ig {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  margin-top: 4px;
-  padding: 4px 0;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  color: var(--type);
-  border-bottom: 1px solid var(--line);
-  text-decoration: none;
-  transition: color 280ms var(--ease), border-color 280ms var(--ease), gap 320ms var(--ease);
-}
-.preview-ig:hover,
-.preview-ig:focus-visible {
-  color: var(--type-soft);
-  border-color: var(--type);
-  gap: 12px;
-}
-.preview-ig-handle {
-  font-style: italic;
-}
-.preview-ig-arrow {
-  display: inline-block;
-  font-style: normal;
-  transform: translateY(-1px);
-  transition: transform 320ms var(--ease);
-}
-.preview-ig:hover .preview-ig-arrow,
-.preview-ig:focus-visible .preview-ig-arrow {
-  transform: translate(2px, -3px);
-}
-@media (hover: none) {
-  .preview { display: none; }
-}
-@media (max-width: 1024px) {
-  .preview { display: none; }
-}
-
-/* Inline panel — mobile / touch tap-to-expand */
-.designer-panel {
-  grid-column: 1 / -1;
-  display: none;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition:
-    max-height 520ms var(--ease),
-    opacity 360ms var(--ease),
-    padding 420ms var(--ease);
-  padding: 0;
-}
-.designer-panel-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 60ch;
-  padding-bottom: 8px;
-}
-.designer-panel-media {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 2px;
-  background: var(--bg-3);
-  box-shadow:
-    0 18px 48px -16px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(199, 99, 86, 0.12);
-}
-.designer-panel-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.92) contrast(1.02);
-}
-.designer-panel-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, transparent 60%, rgba(72, 13, 19, 0.45));
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-.designer-panel-bio {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--type);
-  margin: 0;
-  letter-spacing: -0.005em;
-}
-.designer-panel-ig {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  padding: 6px 0;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  color: var(--type);
-  border-bottom: 1px solid var(--line);
-  text-decoration: none;
-  font-style: italic;
-  transition: color 280ms var(--ease), border-color 280ms var(--ease), gap 320ms var(--ease);
-}
-.designer-panel-ig:active,
-.designer-panel-ig:focus-visible {
-  color: var(--type-soft);
-  border-color: var(--type);
-  gap: 12px;
-}
-.designer-panel-ig .arrow {
-  font-style: normal;
-  transform: translateY(-1px);
-}
-
-@media (hover: none), (max-width: 1024px) {
-  .designer-panel { display: block; }
-  .designer-row.expanded > .designer-panel {
-    max-height: 1800px;
-    opacity: 1;
-    padding: 18px 0 28px;
-  }
-  .designer-row.expanded .designer-mark {
-    transform: rotate(45deg);
-    opacity: 1;
-  }
-  .designer-row.expanded .designer-name {
-    font-style: italic;
-    letter-spacing: -0.038em;
-  }
-}
-
-@media (max-width: 800px) {
-  .designers-intro { grid-template-columns: 1fr; gap: 22px; }
-  .designer-row {
-    grid-template-columns: auto 1fr auto;
-    gap: 16px;
-    padding: 18px 4px;
-  }
-  .designer-num { display: none; }
-  .designer-mark {
-    display: block;
-    width: 12px;
-    height: 12px;
-    align-self: center;
-    opacity: 0.55;
-  }
-  .designer-panel-inner { gap: 14px; }
-  .designer-panel-media { max-width: 100%; }
-}
-
-/* ───────────────────────── PROGRAM ───────────────────────── */
-
-.program-intro {
-  display: grid;
-  grid-template-columns: 0.9fr 2.5fr;
-  gap: 56px;
-  margin-bottom: 80px;
-  align-items: start;
-}
-.program-intro p {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.55;
-  color: var(--type-soft);
-  max-width: 62ch;
-}
-
-.opening-night {
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-3));
-  padding: 56px var(--gut-lg);
-  margin-bottom: 80px;
-  display: grid;
-  grid-template-columns: 0.9fr 2.5fr;
-  gap: 56px;
-  align-items: start;
-  position: relative;
-  overflow: hidden;
-}
-.opening-night::before {
-  content: "";
-  position: absolute;
-  top: -120px; right: -120px;
-  width: 380px; height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(199, 99, 86, 0.20), transparent 60%);
-  pointer-events: none;
-}
-.opening-night-eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-  font-weight: 500;
-  margin-bottom: 14px;
-}
-.opening-night h3 {
-  font-size: clamp(2rem, 4.6vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-  color: var(--type);
-  margin-bottom: 18px;
-}
-.opening-night p {
-  font-size: 1rem;
+.section-intro {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
   line-height: 1.55;
   color: var(--type-soft);
   max-width: 56ch;
-  margin-bottom: 28px;
+  margin: 0;
 }
-.opening-night .cta-row {
-  display: flex;
-  flex-wrap: wrap;
+@media (max-width: 800px) {
+  .section { padding: 60px 18px 0; }
+  .section-head { grid-template-columns: 1fr; gap: 14px; padding-top: 22px; margin-bottom: 22px; }
+}
+
+/* ─────── EXHIBITING DESIGNERS (works grid) ─────── */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 22px;
-  align-items: center;
 }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--type);
-  padding: 14px 22px;
-  border: 1px solid var(--type);
+.works-grid figure {
+  margin: 0;
   position: relative;
+  cursor: zoom-in;
+}
+.works-grid .frame {
+  background: var(--bg-2);
   overflow: hidden;
-  transition: color 400ms var(--ease);
-  z-index: 1;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px var(--line-2);
+  transition: transform 500ms var(--ease), box-shadow 500ms var(--ease);
 }
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--type);
-  transform: translateY(101%);
-  transition: transform 500ms var(--ease);
-  z-index: -1;
+.works-grid figure:hover .frame {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -20px rgba(0,0,0,0.5), 0 0 0 1px var(--line);
 }
-.btn:hover { color: var(--bg); }
-.btn:hover::before { transform: translateY(0); }
-.btn .arrow {
-  display: inline-block;
-  width: 16px; height: 1px;
-  background: currentColor;
-  position: relative;
-  transition: width 400ms var(--ease);
+.works-grid .frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+  transition: transform 800ms var(--ease);
 }
-.btn .arrow::after {
-  content: "";
-  position: absolute;
-  right: 0; top: 50%;
-  width: 6px; height: 6px;
-  border-right: 1px solid currentColor;
-  border-top: 1px solid currentColor;
-  transform: translateY(-50%) rotate(45deg);
-}
-.btn:hover .arrow { width: 22px; }
-
-.btn-ghost {
-  border-color: var(--line);
-  color: var(--type-soft);
-}
-.btn-ghost:hover { color: var(--bg); }
-
-.programs {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-.program-card {
-  display: grid;
-  grid-template-columns: 0.9fr 2.5fr;
-  gap: 56px;
-  padding: 56px 0;
-  border-top: 1px solid var(--line-2);
-  align-items: start;
-}
-.program-card:last-of-type { border-bottom: 1px solid var(--line-2); }
-
-.program-meta {
-  display: grid;
-  gap: 16px;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.program-meta .meta-row {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 14px;
-  padding: 12px 0;
-  border-top: 1px solid var(--line-2);
-  align-items: baseline;
-}
-.program-meta .meta-row:first-child { border-top: none; padding-top: 0; }
-.program-meta .meta-row dt {
-  color: var(--type-mute);
-  font-weight: 500;
-}
-.program-meta .meta-row dd {
-  color: var(--type);
-  font-weight: 600;
-  font-feature-settings: "tnum" 1;
-}
-
-.program-body .program-tag {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-  margin-bottom: 14px;
-  font-weight: 500;
-}
-.program-body h3 {
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--type);
-  margin-bottom: 8px;
-}
-.program-body h3 em {
-  font-weight: 300;
-  font-style: italic;
-  color: var(--type-soft);
-}
-.program-body .presenter {
+.works-grid figure:hover .frame img { transform: scale(1.03); }
+.works-grid figcaption {
+  padding: 14px 0 4px;
   font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--type-soft);
-  margin-bottom: 28px;
-  font-weight: 400;
-}
-.program-body .presenter strong {
-  font-weight: 600;
-  color: var(--type);
-}
-.program-body .program-desc {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--type-soft);
-  margin-bottom: 22px;
-  max-width: 64ch;
-}
-.program-body .about {
-  padding: 0;
-  margin: 28px 0 28px;
-  max-width: 60ch;
-}
-.program-body .about-label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-.program-body .about-text {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--type-soft);
-}
-
-@media (max-width: 800px) {
-  .opening-night,
-  .program-intro,
-  .program-card { grid-template-columns: 1fr; gap: 28px; }
-  .opening-night { padding: 40px var(--gut); }
-}
-
-/* ───────────────────────── CONCEPT STORE ───────────────────────── */
-
-.store {
-  position: relative;
-}
-.store-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: end;
-}
-.store-grid p {
-  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
-  line-height: 1.55;
-  color: var(--type-soft);
-  max-width: 56ch;
-}
-.store-grid .store-stack {
-  display: grid;
-  gap: 18px;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  border-top: 1px solid var(--line);
-  padding-top: 22px;
-}
-.store-grid .store-stack strong {
-  display: block;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  color: var(--type);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.stockists-wrap {
-  margin-top: 0;
-}
-.stockists {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid var(--line-2);
-  border-bottom: 1px solid var(--line-2);
-}
-.stockist {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  align-items: baseline;
-  gap: 18px;
-  padding: 20px 4px;
-  border-bottom: 1px solid var(--line-2);
-  position: relative;
-  transition: padding 500ms var(--ease), color 400ms var(--ease);
-  overflow: hidden;
-}
-.stockist::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 0;
-  background: var(--type);
-  opacity: 0.04;
-  transition: width 500ms var(--ease);
-  pointer-events: none;
-}
-.stockist:hover { padding-left: 22px; }
-.stockist:hover::before { width: 100%; }
-.stockist:hover .stockist-name {
-  font-style: italic;
-  letter-spacing: -0.028em;
-}
-.stockist:hover .stockist-mark {
-  transform: translate(2px, -2px);
-  opacity: 1;
-}
-.stockist:nth-last-child(2):not(:last-child),
-.stockist:last-child { border-bottom: 0; }
-.stockist-num {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--type-mute);
-  font-feature-settings: "tnum" 1;
-  font-weight: 500;
-}
-.stockist-name {
-  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--type);
-  line-height: 1.1;
-  transition: font-style 300ms var(--ease), letter-spacing 400ms var(--ease);
-}
-.stockist-tag {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-  font-weight: 500;
-  white-space: nowrap;
-  border: 1px solid var(--line);
-  padding: 4px 10px;
-  border-radius: 100px;
-}
-.stockist-mark {
-  width: 14px; height: 14px;
-  display: inline-block;
-  position: relative;
-  opacity: 0.5;
-  transition: transform 500ms var(--ease), opacity 400ms var(--ease);
-}
-.stockist-mark svg {
-  width: 100%; height: 100%;
-  fill: var(--type);
-  display: block;
-}
-
-@media (max-width: 800px) {
-  .store-grid { grid-template-columns: 1fr; gap: 28px; }
-  .stockists { grid-template-columns: 1fr; }
-  .stockist {
-    grid-template-columns: auto 1fr auto;
-    gap: 12px;
-    padding: 16px 4px;
-  }
-  .stockist-num { display: none; }
-  .stockist-tag { font-size: 9px; padding: 3px 8px; }
-}
-
-/* ───────────────────────── INFO ───────────────────────── */
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.info-about {
-  font-size: clamp(1.05rem, 1.4vw, 1.4rem);
   line-height: 1.5;
   color: var(--type);
-  font-weight: 400;
-  max-width: 60ch;
-  text-wrap: pretty;
+  letter-spacing: -0.005em;
 }
-.info-about p + p { margin-top: 1em; }
-.info-about em { color: var(--type-soft); font-style: italic; }
-
-.info-side {
-  display: grid;
-  gap: 44px;
-}
-.info-side .info-block {
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  border-top: 1px solid var(--line);
-  padding-top: 22px;
-}
-.info-side .info-block .label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-.info-side .info-block .name {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--type);
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
-}
-.info-side .info-block .role {
-  font-size: 12px;
-  color: var(--type-soft);
-  margin-bottom: 8px;
-}
-.info-side .info-block .email {
-  font-size: 13px;
-  color: var(--type);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 2px;
-  transition: border-color 400ms var(--ease), color 400ms var(--ease);
-}
-.info-side .info-block .email:hover {
-  color: var(--type-soft);
-  border-color: var(--type);
-}
-
-/* ───────────────────────── FIND US (map block) ───────────────────────── */
-.find-us {
-  display: grid;
-  grid-template-columns: 0.7fr 1.6fr;
-  gap: 56px;
-  align-items: start;
-  padding-bottom: 80px;
-  margin-bottom: 80px;
-  border-bottom: 1px solid var(--line);
-}
-.find-us-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.find-us-label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  font-weight: 600;
-}
-.find-us-title {
-  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--type);
-  margin: 0;
-}
-.find-us-address {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--type-soft);
-  margin: 0;
-  letter-spacing: 0.005em;
-}
-.find-us-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--type);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 3px;
-  text-decoration: none;
-  transition: color 280ms var(--ease), border-color 280ms var(--ease), gap 320ms var(--ease);
-}
-.find-us-link:hover,
-.find-us-link:focus-visible {
-  color: var(--type-soft);
-  border-color: var(--type);
-  gap: 12px;
-}
-.find-us-link .arrow {
-  font-style: normal;
-  transform: translateY(-1px);
-  transition: transform 320ms var(--ease);
-}
-.find-us-link:hover .arrow,
-.find-us-link:focus-visible .arrow {
-  transform: translate(2px, -3px);
-}
-.find-us-map {
-  position: relative;
+.works-grid .work-title {
   display: block;
-  border-radius: 2px;
-  overflow: hidden;
-  background: var(--bg-2);
-  box-shadow:
-    0 28px 70px -22px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(199, 99, 86, 0.15);
-  transition: transform 600ms var(--ease), box-shadow 600ms var(--ease);
-}
-.find-us-map:hover,
-.find-us-map:focus-visible {
-  transform: translateY(-2px);
-  box-shadow:
-    0 36px 84px -22px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(199, 99, 86, 0.25);
-}
-.find-us-map img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.find-us-map .pin {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--type-soft);
-  background: rgba(72, 13, 19, 0.78);
-  padding: 7px 11px;
-  backdrop-filter: blur(4px);
-}
-
-@media (max-width: 900px) {
-  .find-us {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-bottom: 56px;
-    margin-bottom: 56px;
-  }
-}
-
-.sponsors {
-  border-top: 1px solid var(--line);
-  margin-top: 80px;
-  padding-top: 60px;
-  display: grid;
-  gap: 40px;
-}
-.sponsors-label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-mute);
-  font-weight: 600;
-}
-.sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 50px 40px;
-  align-items: center;
-  justify-items: center;
-}
-.sponsor-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 56px;
-  position: relative;
-  transition: opacity 350ms var(--ease), transform 350ms var(--ease);
-}
-.sponsor-card:hover { opacity: 0.7; transform: translateY(-1px); }
-.sponsor-img {
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  /* Tint any monochrome (or recolorable) logo to the coral type colour */
-  filter: brightness(0) saturate(100%) invert(48%) sepia(48%) saturate(632%) hue-rotate(326deg) brightness(91%) contrast(86%);
-  transition: filter 350ms var(--ease);
-}
-.sponsor-text {
-  font-size: clamp(1.1rem, 1.9vw, 1.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
   color: var(--type);
-  text-align: center;
-  line-height: 1.05;
-}
-/* Show text only when image is missing/broken (toggled via JS onerror) */
-.sponsor-img + .sponsor-text { display: none; }
-.sponsor-img.broken { display: none; }
-.sponsor-img.broken + .sponsor-text { display: block; }
-
-@media (max-width: 900px) {
-  .info-grid { grid-template-columns: 1fr; gap: 44px; }
-}
-
-/* ───────────────────────── FOOTER ───────────────────────── */
-
-.footer {
-  padding: 80px var(--side-pad) 40px;
-  border-top: 1px solid var(--line);
-  background: var(--bg-2);
-  position: relative;
-  z-index: 1;
-}
-
-/* ─── Newsletter ─── */
-.newsletter {
-  max-width: 720px;
-  margin: 20px auto 80px;
-  text-align: center;
-}
-.newsletter-eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--type-soft);
-  margin-bottom: 22px;
   font-weight: 500;
+  margin-bottom: 2px;
 }
-.newsletter-headline {
-  font-size: clamp(1.7rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--type);
-  margin-bottom: 16px;
-  text-wrap: balance;
-}
-.newsletter-copy {
-  font-size: 14px;
-  color: var(--type-soft);
-  line-height: 1.55;
-  margin: 0 auto 36px;
-  max-width: 52ch;
-}
-.newsletter-form {
-  position: relative;
-  margin-top: 8px;
-}
-/* Style the embedded eomail form to match the site */
-.newsletter-form * {
-  box-sizing: border-box !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-.newsletter-form form,
-.newsletter-form > div {
-  background: transparent !important;
-  max-width: 560px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-.newsletter-form input[type="email"],
-.newsletter-form input[type="text"] {
-  background: transparent !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 0 !important;
-  padding: 16px 20px !important;
-  color: var(--type) !important;
-  font-size: 14px !important;
-  letter-spacing: 0.04em !important;
-  width: 100% !important;
-  outline: none !important;
-  transition: border-color 300ms var(--ease) !important;
-  height: auto !important;
-  line-height: 1.4 !important;
-  box-shadow: none !important;
-}
-.newsletter-form input[type="email"]:focus,
-.newsletter-form input[type="text"]:focus {
-  border-color: var(--type) !important;
-}
-.newsletter-form input::placeholder {
-  color: var(--type-mute) !important;
-  opacity: 1 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  font-size: 11px !important;
-}
-.newsletter-form button,
-.newsletter-form input[type="submit"] {
-  background: var(--type) !important;
-  border: 1px solid var(--type) !important;
-  border-radius: 0 !important;
-  padding: 16px 28px !important;
-  color: var(--bg) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  font-weight: 700 !important;
-  cursor: pointer !important;
-  transition: background 300ms var(--ease), color 300ms var(--ease), border-color 300ms var(--ease) !important;
-  height: auto !important;
-  line-height: 1.4 !important;
-  box-shadow: none !important;
-  width: 100% !important;
-  margin-top: 12px !important;
-}
-.newsletter-form button:hover,
-.newsletter-form input[type="submit"]:hover {
-  background: var(--type-soft) !important;
-  border-color: var(--type-soft) !important;
-  color: var(--bg) !important;
-}
-.newsletter-form label {
-  color: var(--type-soft) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-  display: block !important;
-  text-align: left !important;
-  margin-bottom: 8px !important;
-  font-weight: 500 !important;
-}
-.newsletter-form a {
-  color: var(--type) !important;
-  border-bottom: 1px solid var(--line) !important;
-  text-decoration: none !important;
-}
-/* iframe forms */
-.newsletter-form iframe {
-  width: 100% !important;
-  max-width: 560px !important;
-  margin: 0 auto !important;
-  display: block !important;
-  border: none !important;
-  background: transparent !important;
-}
-/* Hide EmailOctopus / eomail branding—narrow selectors only */
-.newsletter-form a[href*="emailoctopus.com"],
-.newsletter-form img[src*="emailoctopus.com"],
-.newsletter-form img[alt="EmailOctopus" i],
-.newsletter-form img[alt="Email Octopus" i] {
-  display: none !important;
-}
-
-.footer-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 28px;
-  font-size: 11px;
-  letter-spacing: 0.2em;
+.works-grid .work-designer {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--type-mute);
-  padding-top: 28px;
+  font-weight: 600;
+}
+
+/* ─────── CONCEPT STORE BRAND LIST ─────── */
+.brands {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  column-gap: 56px;
+  row-gap: 0;
   border-top: 1px solid var(--line-2);
 }
-.footer-credit {
-  margin-top: 22px;
-  text-align: center;
+.brands li {
+  border-bottom: 1px solid var(--line-2);
+}
+.brands a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 22px;
+  padding: 22px 4px 22px 0;
+  text-decoration: none;
+  color: var(--type);
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  position: relative;
+  transition: padding-left 400ms var(--ease), color 300ms var(--ease);
+}
+.brands a:hover {
+  padding-left: 18px;
+  color: var(--type-soft);
+}
+.brands a::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: var(--type);
+  opacity: 0.06;
+  transition: width 400ms var(--ease);
+  pointer-events: none;
+}
+.brands a:hover::before { width: 100%; }
+.brands .at {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--type-mute);
-  font-weight: 500;
+  font-weight: 600;
+  font-style: normal;
+  white-space: nowrap;
+  transition: color 300ms var(--ease);
 }
-.footer-credit .inline-link {
-  color: var(--type-soft);
-}
-.footer-meta .center { text-align: center; }
-.footer-meta .right { text-align: right; }
-
+.brands a:hover .at { color: var(--type); }
 @media (max-width: 700px) {
-  .footer-meta { grid-template-columns: 1fr; gap: 12px; text-align: left; }
-  .footer-meta .center, .footer-meta .right { text-align: left; }
+  .brands { grid-template-columns: 1fr; column-gap: 0; }
+  .brands a { padding: 18px 4px; font-size: 1.2rem; }
 }
 
-/* ───────────────────────── REVEAL ON SCROLL ───────────────────────── */
+/* ─────── FOOTER ─────── */
+.footer {
+  border-top: 1px solid var(--line);
+  margin: 100px clamp(20px, 5vw, 64px) 0;
+  padding: 36px 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: end;
+  gap: 24px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--type-mute);
+}
+.footer a { color: var(--type-mute); text-decoration: none; transition: color 280ms var(--ease); }
+.footer a:hover { color: var(--type-soft); }
+.footer .center { text-align: center; }
+.footer .right { text-align: right; }
+.footer .right a {
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+.footer .right a:hover { color: var(--type-soft); border-color: var(--type); }
+@media (max-width: 700px) {
+  .footer { grid-template-columns: 1fr; text-align: center; }
+  .footer .center, .footer .right { text-align: center; }
+}
 
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 900ms var(--ease), transform 900ms var(--ease);
+/* ─────── LIGHTBOX ─────── */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(20, 4, 6, 0.95);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  z-index: 200; padding: 56px 24px;
 }
-.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
+.lightbox.open { display: flex; }
+.lightbox-frame {
+  max-width: min(1280px, 92vw);
+  max-height: 88vh;
+  display: grid; place-items: center; gap: 18px;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0ms !important;
-    transition-duration: 0ms !important;
-  }
-  .reveal { opacity: 1; transform: none; }
+.lightbox-img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 1px;
+  box-shadow: 0 36px 84px -22px rgba(0,0,0,0.7);
 }
+.lightbox-cap {
+  font-size: 13px;
+  color: var(--type-soft);
+  text-align: center;
+  max-width: 60ch;
+}
+.lightbox-cap .credit {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--type-mute);
+  margin-top: 6px;
+}
+.lightbox-close {
+  position: fixed; top: 24px; right: 28px;
+  width: 40px; height: 40px;
+  border: 1px solid var(--line);
+  background: rgba(56,8,13,0.7);
+  color: var(--type-soft);
+  font-size: 18px; cursor: pointer;
+  border-radius: 1px;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease);
+}
+.lightbox-close:hover { color: var(--type); border-color: var(--type); }
 </style>
 </head>
-
 <body>
 
-<!-- ─────────────────────── NAVIGATION ─────────────────────── -->
+<!-- NAV: logo + About only -->
 <header class="nav">
-  <nav class="nav-left" aria-label="Primary">
-    <a href="#designers">Designers</a>
-    <a href="#program">Program</a>
-  </nav>
+  <div class="nav-left" aria-hidden="true"></div>
   <div class="nav-center">
     <a href="#top" class="logo-wrap" aria-label="Paved States × Haworth DesignLab home">
       <img class="logo-img primary" src="brand_assets/paved-states-x-haworth_coral.png" alt="Paved States × Haworth DesignLab" />
@@ -1899,811 +521,316 @@ a.info-value:focus-visible .info-arrow {
     </a>
   </div>
   <nav class="nav-right" aria-label="Primary">
-    <a href="#store">Concept Store</a>
-    <a href="#info">Info</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
-<button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-  <span class="nav-toggle-bar"></span>
-  <span class="nav-toggle-bar"></span>
-  <span class="nav-toggle-bar"></span>
-</button>
-
-<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-  <a href="#designers">Designers</a>
-  <a href="#program">Program</a>
-  <a href="#store">Concept Store</a>
-  <a href="#info">Info</a>
-</div>
-
-<!-- ─────────────────────── HERO ─────────────────────── -->
+<!-- HERO: auto-cycling horizontal photo carousel + rotating tagline -->
 <section class="hero" id="top">
-  <h1 class="hero-display" aria-label="A platform of objects">
-    <span class="line-1">A platform of</span>
-    <span class="line-2"><span class="rotator-word" id="rotator">objects</span><span class="period">.</span></span>
-  </h1>
-
-  <div class="hero-foot">
-    <p class="where">
-      During <a class="inline-link" href="https://neocon.com/" target="_blank" rel="noopener">NeoCon</a>, Paved States × Haworth DesignLab transforms THE MART's lobby into an environment entirely its own. Part gallery, part exhibition, part retail space, unfolding as a series of lived-in settings anchored by a central analog lounge.
-      <strong>An exploration of what living looks like next.</strong>
-    </p>
-    <div class="info-stack">
-      <div class="info-block">
-        <span class="info-label">Where</span>
-        <a class="info-value" href="https://www.google.com/maps/search/?api=1&amp;query=THE+MART+222+W+Merchandise+Mart+Plaza+Chicago" target="_blank" rel="noopener" aria-label="The MART, Chicago — open in Google Maps">
-          The MART, Chicago<br>Suite 121 &amp; South Lobby
-          <span class="info-arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div class="info-block">
-        <span class="info-label">When</span>
-        <div class="hours-mini">
-          <div class="hr"><span class="day">Sun · Jun 7<span class="note">Preview</span></span><span class="time">12–4 PM</span></div>
-          <div class="hr"><span class="day">Mon · Jun 8</span><span class="time">9 AM–5 PM</span></div>
-          <div class="hr"><span class="day">Tue · Jun 9</span><span class="time">9 AM–5 PM</span></div>
-          <div class="hr"><span class="day">Wed · Jun 10</span><span class="time">9 AM–3 PM</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-cue">
-      Scroll <span class="arrow"></span>
-    </div>
+  <div class="hero-slides" id="hero-slides">
+    <div class="hero-slide active" style="background-image: url('images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-1.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-5.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-17.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-16.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-51.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/2026/install/paved-states-haworth-designlab-photos-by-chris-force-48.jpg')"></div>
   </div>
-
+  <div class="hero-overlay">
+    <div></div>
+    <p class="hero-mark">Paved States</p>
+    <h1 class="hero-display" aria-label="A platform of objects">
+      A platform of <em><span class="rotator-word" id="rotator">objects</span></em><span class="period">.</span>
+    </h1>
+    <p class="hero-presented">Presented by NeoCon, Sixtysix and Haworth</p>
+  </div>
 </section>
 
-<!-- ─────────────────────── INTRO METADATA ─────────────────────── -->
-<section class="intro reveal">
-  <div class="intro-label">
-    / 00 &nbsp;Paved States Second Edition
+<!-- BAND: pull quote -->
+<section class="band">
+  <div class="band-side">/ Haworth DesignLab × Paved States · NeoCon 2026</div>
+  <div>
+    <p class="band-quote">"Paved States was always meant to celebrate designers who are exploring what the future of living looks like. This year, with Patricia Urquiola and an <em>incredible</em> group of designers, we brought something unique to NeoCon that had its own pulse."</p>
+    <p class="band-credit">— Chris Force, Sixtysix</p>
   </div>
-  <div class="intro-body">
-    <p>The 2026 Paved States × <a class="inline-link" href="https://www.haworth.com/" target="_blank" rel="noopener">Haworth</a> DesignLab installation takes over THE MART's lobby and Suite 121 with work from a continental roster of emerging designers across furniture, lighting, sculpture, and the in-between.</p>
-    <p>The space includes a curated concept store presented by <a class="inline-link" href="https://www.gantri.com/" target="_blank" rel="noopener">Gantri</a>, a <a class="inline-link" href="https://sixtysixmag.com/" target="_blank" rel="noopener">Sixtysix</a>-curated bookstore and newsstand stocked with the most interesting design and lifestyle magazines, and an analog lounge featuring curated playlists, guest DJ sessions, and a place to sit and listen.</p>
-    <p>Throughout the week, the space hosts conversations with curator <a class="inline-link" href="https://www.instagram.com/patricia_urquiola" target="_blank" rel="noopener">Patricia Urquiola</a>, <a class="inline-link" href="https://www.instagram.com/chrissforce" target="_blank" rel="noopener">Chris Force</a>, and the exhibiting designers themselves. Expect a few unexpected workshops along the way.</p>
-  </div>
-  <aside class="metadata">
-    <dl>
-      <div class="row">
-        <dt>Curated By</dt>
-        <dd><a class="inline-link" href="https://www.instagram.com/patricia_urquiola" target="_blank" rel="noopener">Patricia Urquiola</a><span class="secondary"><a class="inline-link" href="https://www.instagram.com/chrissforce" target="_blank" rel="noopener">Chris Force</a></span></dd>
-      </div>
-      <div class="row">
-        <dt>Presented By</dt>
-        <dd><a class="inline-link" href="https://sixtysixmag.com/" target="_blank" rel="noopener">Sixtysix</a> &amp; <a class="inline-link" href="https://www.haworth.com/" target="_blank" rel="noopener">Haworth</a></dd>
-      </div>
-    </dl>
-  </aside>
 </section>
 
-<!-- ─────────────────────── MARQUEE ─────────────────────── -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Paved States × Haworth DesignLab</span><span class="dot">●</span>
-    <span>Edition 02—2026</span><span class="dot">●</span>
-    <span>Curated by Patricia Urquiola &amp; Chris Force</span><span class="dot">●</span>
-    <span>The MART · Chicago</span><span class="dot">●</span>
-    <span>June 7—10, 2026</span><span class="dot">●</span>
-    <span>A Platform of What's Next</span><span class="dot">●</span>
-    <span>Paved States × Haworth DesignLab</span><span class="dot">●</span>
-    <span>Edition 02—2026</span><span class="dot">●</span>
-    <span>Curated by Patricia Urquiola &amp; Chris Force</span><span class="dot">●</span>
-    <span>The MART · Chicago</span><span class="dot">●</span>
-    <span>June 7—10, 2026</span><span class="dot">●</span>
-    <span>A Platform of What's Next</span><span class="dot">●</span>
+<!-- INSTALL (masonry, no crop, no header, no captions) -->
+<section class="section" id="install" style="padding-top: 80px;">
+  <div class="masonry" id="install-grid">
+    <!-- rendered by JS -->
+  </div>
+</section>
+
+<!-- EXHIBITING DESIGNERS -->
+<section class="section" id="exhibiting">
+  <div class="section-head">
+    <h2 class="section-title">Exhibiting <em>Designers</em></h2>
+    <p class="section-intro">13 designers from across North America anchored Edition 02 — work spanning furniture, sculpture, lighting, and the in-between.</p>
+  </div>
+  <div class="works-grid" id="works-grid">
+    <!-- rendered by JS -->
+  </div>
+</section>
+
+<!-- CONCEPT STORE — lifestyle photos + brand list, one section -->
+<section class="section" id="store">
+  <div class="section-head">
+    <h2 class="section-title">Concept Store <em>presented by <a class="inline-link" href="https://www.gantri.com/" target="_blank" rel="noopener">Gantri</a></em></h2>
+    <p class="section-intro">A retail-forward edit of small objects, fragrance, jewelry, and goods — stocked alongside the installation.</p>
+  </div>
+  <div class="masonry" id="retail-grid" style="margin-bottom: 64px;">
+    <!-- rendered by JS -->
+  </div>
+  <ul class="brands" id="brands"></ul>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+  <div class="lightbox-frame">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <p class="lightbox-cap" id="lightbox-cap"></p>
   </div>
 </div>
 
-<!-- ─────────────────────── DESIGNERS ─────────────────────── -->
-<section class="section" id="designers">
-  <div class="section-head reveal">
-    <h2 class="section-num">
-      <span class="index">01</span>
-      Designers
-    </h2>
-    <p class="section-intro">13 designers from across North America, working in furniture, sculpture, lighting, and the in-between.</p>
-  </div>
-
-  <div class="designers-list" id="designers-list">
-    <!-- rows injected via JS, but with a no-JS fallback below -->
-  </div>
-</section>
-
-<!-- floating designer preview -->
-<aside class="preview" id="preview" aria-hidden="true">
-  <div class="preview-media">
-    <img src="" alt="" id="preview-img" />
-  </div>
-  <div class="preview-body">
-    <h3 class="preview-name" id="preview-name"></h3>
-    <p class="preview-bio" id="preview-bio"></p>
-    <a class="preview-ig" id="preview-ig" href="#" target="_blank" rel="noopener">
-      <span class="preview-ig-handle"></span>
-      <span class="preview-ig-arrow" aria-hidden="true">↗</span>
-    </a>
-  </div>
-</aside>
-
-<!-- ─────────────────────── PROGRAM ─────────────────────── -->
-<section class="section" id="program">
-  <div class="section-head reveal">
-    <h2 class="section-num">
-      <span class="index">02</span>
-      Program
-    </h2>
-    <p class="section-intro">Throughout the week, the exhibition hosts moderated conversations, panels, and workshops, bringing exhibiting designers, mentors, and special guests together for honest, unscripted exchanges during one of design's most influential weeks. No registration required for panels. Workshops require registration <a class="inline-link" href="https://neocon.com/features/paved-states" target="_blank" rel="noopener">here</a>.</p>
-  </div>
-
-  <!-- Opening Reception -->
-  <article class="opening-night reveal">
-    <div>
-      <div class="opening-night-eyebrow">Opening Cocktail Reception</div>
-      <h3>Mon. June&nbsp;8<br><em>5—7 PM</em></h3>
-    </div>
-    <div>
-      <p>Opening night for Paved States Edition 02 and the launch of Sixtysix Issue 16. Drinks, a DJ, and the first look at the show.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://forms.gle/eM512xtogPCDxv2d9" target="_blank" rel="noopener">RSVP <span class="arrow"></span></a>
-        <span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--type-mute);">Suite 121 · The MART Lobby</span>
-      </div>
-    </div>
-  </article>
-
-  <div class="programs">
-
-    <!-- 01—Patricia Asks Anything · Monday -->
-    <article class="program-card reveal">
-      <div class="program-meta">
-        <dl>
-          <div class="meta-row"><dt>Date</dt><dd>Mon. 6/8</dd></div>
-          <div class="meta-row"><dt>Time</dt><dd>10–11 AM</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Suite 121</dd></div>
-          <div class="meta-row"><dt>Entry</dt><dd>Open · No RSVP Required</dd></div>
-        </dl>
-      </div>
-      <div class="program-body">
-        <div class="program-tag">Panel · Patricia Asks Anything</div>
-        <h3>Patricia Asks Anything <em>— Monday</em></h3>
-        <p class="presenter"><strong>Patricia Urquiola</strong> · Curator &amp; Designer · with the exhibiting designers of Paved States · Moderated by Chris Force, Editor-in-Chief, Sixtysix</p>
-        <p class="program-desc">Patricia takes the chair across from each of the exhibiting designers and asks the questions only another designer would think to ask. The instincts behind the work, the doubts that sharpen it, the hopes that pull it forward. A conversation about process, formation, and what each of them is reaching for next.</p>
-        <div class="about">
-          <div class="about-label">With</div>
-          <div class="about-text">Lauren Goodman · Madeline Isakson · Malcolm Majer · Studio AHEAD · Hannah Bigeleisen · marmar studio · Jean-Michel Gadoua</div>
-        </div>
-        <div class="about">
-          <div class="about-label">About the Presenter</div>
-          <div class="about-text">Patricia Urquiola is one of the most influential designers working today. Born in Spain, trained under Achille Castiglioni at Politecnico di Milano, she founded her own studio in 2001 and has served as Creative Director of Cassina since 2015. Her work spans furniture, architecture, and interiors for clients including B&amp;B Italia, Moroso, Flos, Louis Vuitton, and Haworth, and is held in the permanent collections of MoMA, the V&amp;A, and the Vitra Design Museum.</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 02—Workshop · Dental Couture (Mon 12) -->
-    <article class="program-card reveal">
-      <div class="program-meta">
-        <dl>
-          <div class="meta-row"><dt>Date</dt><dd>Mon. 6/8</dd></div>
-          <div class="meta-row"><dt>Time</dt><dd>12–1:30 PM</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Suite 121</dd></div>
-          <div class="meta-row"><dt>Entry</dt><dd>Registration Required</dd></div>
-        </dl>
-      </div>
-      <div class="program-body">
-        <div class="program-tag">Workshop · Jewelry</div>
-        <h3>Dental Couture <em>with Secret of Manna</em></h3>
-        <p class="presenter"><strong>Tim Nicholson</strong> aka Secret of Manna · Celebrity Jeweler &amp; Artist</p>
-        <p class="program-desc">A former video game designer turned metalsmith, Tim Nicholson built his practice transforming pop culture references into experimental wearable art. At Paved States, he walks you through his design process from concept to material selection, then guides you in creating your own piece. Each participant is custom molded on-site and leaves fitted for a one-of-a-kind silver tooth cap, handcrafted with Secret of Manna and delivered after the event.</p>
-        <div class="about">
-          <div class="about-label">About the Presenter</div>
-          <div class="about-text">Tim Nicholson aka Secret of Manna is a celebrity jeweler and artist who traded video game design for gold and silver. His practice turns pop culture artifacts—mouse cursors, bread clips, internet relics—into sculptural jewelry that blurs the line between luxury and play.</div>
-        </div>
-        <a class="btn" href="https://neocon.com/features/paved-states" target="_blank" rel="noopener">Register <span class="arrow"></span></a>
-      </div>
-    </article>
-
-    <!-- 03—Curiosity Framework with Benjamin Edgar -->
-    <article class="program-card reveal">
-      <div class="program-meta">
-        <dl>
-          <div class="meta-row"><dt>Date</dt><dd>Mon. 6/8</dd></div>
-          <div class="meta-row"><dt>Time</dt><dd>3:30–4:30 PM</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Suite 121</dd></div>
-          <div class="meta-row"><dt>Entry</dt><dd>Open · No RSVP Required</dd></div>
-        </dl>
-      </div>
-      <div class="program-body">
-        <div class="program-tag">Panel · Practice</div>
-        <h3>The Curiosity Framework <em>— a panel with Benjamin Edgar</em></h3>
-        <p class="presenter"><strong>Benjamin Edgar</strong>, Designer · Moderated by Chris Force, Editor-in-Chief, Sixtysix</p>
-        <p class="program-desc">Benjamin Edgar in conversation with Chris Force, Editor-in-Chief of Sixtysix, on building a practice without a rulebook. The conversation digs into how emerging designers develop a point of view, navigate the industry on their own terms, and find a framework for making work that matters.</p>
-        <div class="about">
-          <div class="about-label">About the Presenter</div>
-          <div class="about-text">Benjamin Edgar is a Chicago-based designer working across industrial design, contemporary culture, sustainable goods, and education. He founded Boxed Water as an alternative to plastic bottles, co-wrote the culture blog The Brilliance alongside Chuck Anderson and Virgil Abloh, and runs An Object Company, an ongoing project producing objects in materials from cotton to marble, each one balancing the useful with the useless.</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 04—Patricia Asks Anything · Tuesday -->
-    <article class="program-card reveal">
-      <div class="program-meta">
-        <dl>
-          <div class="meta-row"><dt>Date</dt><dd>Tue. 6/9</dd></div>
-          <div class="meta-row"><dt>Time</dt><dd>10–11 AM</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Suite 121</dd></div>
-          <div class="meta-row"><dt>Entry</dt><dd>Open · No RSVP Required</dd></div>
-        </dl>
-      </div>
-      <div class="program-body">
-        <div class="program-tag">Panel · Patricia Asks Anything</div>
-        <h3>Patricia Asks Anything <em>— Tuesday</em></h3>
-        <p class="presenter"><strong>Patricia Urquiola</strong> · Curator &amp; Designer · with the exhibiting designers of Paved States · Moderated by Chris Force, Editor-in-Chief, Sixtysix</p>
-        <p class="program-desc">Patricia takes the chair across from each of the exhibiting designers and asks the questions only another designer would think to ask. The instincts behind the work, the doubts that sharpen it, the hopes that pull it forward. A conversation about process, formation, and what each of them is reaching for next.</p>
-        <div class="about">
-          <div class="about-label">With</div>
-          <div class="about-text">Ceren Arslan · Kiki Goti · Stefano Giacomello · Hank Beyer &amp; Alex Sizemore · The CULT · Zac Benloulou</div>
-        </div>
-        <div class="about">
-          <div class="about-label">About the Presenter</div>
-          <div class="about-text">Patricia Urquiola is one of the most influential designers working today. Born in Spain, trained under Achille Castiglioni at Politecnico di Milano, she founded her own studio in 2001 and has served as Creative Director of Cassina since 2015. Her work spans furniture, architecture, and interiors for clients including B&amp;B Italia, Moroso, Flos, Louis Vuitton, and Haworth, and is held in the permanent collections of MoMA, the V&amp;A, and the Vitra Design Museum.</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 05—Workshop · Wallet Making (Tue 12) -->
-    <article class="program-card reveal">
-      <div class="program-meta">
-        <dl>
-          <div class="meta-row"><dt>Date</dt><dd>Tue. 6/9</dd></div>
-          <div class="meta-row"><dt>Time</dt><dd>12–1:30 PM</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Suite 121</dd></div>
-          <div class="meta-row"><dt>Entry</dt><dd>Registration Required</dd></div>
-        </dl>
-      </div>
-      <div class="program-body">
-        <div class="program-tag">Workshop · Leather</div>
-        <h3>Wallet Making <em>with Noel Mercado</em></h3>
-        <p class="presenter"><strong>Noel Mercado</strong> · Chicago Designer &amp; Artist</p>
-        <p class="program-desc">In this hands-on leather wallet workshop, Noel guides participants through hand-stitching and stamping on pre-cut leather patterns. Each attendee constructs their own custom wallet or cardholder, personalizing it with custom letter and number stamps—initials, names, whatever feels right—while drawing on Noel's distinctive approach to craft and cultural storytelling.</p>
-        <div class="about">
-          <div class="about-label">About the Presenter</div>
-          <div class="about-text">Noel Mercado is a Chicago-based multimedia artist that transforms found and salvaged objects into handcrafted artworks, furniture, and wearable pieces that explore the cultural meaning of everyday materials.</div>
-        </div>
-        <a class="btn" href="https://neocon.com/features/paved-states" target="_blank" rel="noopener">Register <span class="arrow"></span></a>
-      </div>
-    </article>
-
-    <!-- 06—Workshop · Second Nature, Floral with Nerine (Tue 2) -->
-    <article class="program-card reveal">
-      <div class="program-meta">
-        <dl>
-          <div class="meta-row"><dt>Date</dt><dd>Tue. 6/9</dd></div>
-          <div class="meta-row"><dt>Time</dt><dd>2–3 PM</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Suite 121</dd></div>
-          <div class="meta-row"><dt>Entry</dt><dd>Registration Required</dd></div>
-        </dl>
-      </div>
-      <div class="program-body">
-        <div class="program-tag">Workshop · Floral</div>
-        <h3>Second Nature <em>— A Floral Workshop with Nerine</em></h3>
-        <p class="presenter"><strong>Sinead Cleary &amp; Liz Topp</strong>, Founders, Nerine</p>
-        <p class="program-desc">In this hands-on workshop, participants explore the fundamentals of custom floral design guided by the founders of Nerine. Each attendee composes their own arrangement to take home in a silver vessel, while learning how flora, form, and texture function as design elements in everyday spaces.</p>
-        <div class="about">
-          <div class="about-label">About the Presenters</div>
-          <div class="about-text">Sinead Cleary and Liz Topp are the founders of Nerine, a Chicago experimental floral studio known for arrangements as sculptural as they are natural.</div>
-        </div>
-        <a class="btn" href="https://neocon.com/features/paved-states" target="_blank" rel="noopener">Register <span class="arrow"></span></a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ─────────────────────── CONCEPT STORE ─────────────────────── -->
-<section class="section store" id="store">
-  <div class="section-head reveal">
-    <h2 class="section-num">
-      <span class="index">03</span>
-      Concept Store presented by <a class="inline-link" href="https://www.gantri.com/" target="_blank" rel="noopener">Gantri</a>
-    </h2>
-  </div>
-
-  <div class="stockists-wrap reveal">
-    <div class="stockists" id="stockists"></div>
-  </div>
-</section>
-
-<!-- ─────────────────────── INFO ─────────────────────── -->
-<section class="section" id="info">
-  <div class="section-head reveal">
-    <h2 class="section-num">
-      <span class="index">04</span>
-      Info
-    </h2>
-  </div>
-
-  <div class="find-us reveal">
-    <div class="find-us-meta">
-      <div class="find-us-label">Find Us</div>
-      <h3 class="find-us-title">Suite 121 &amp; South Lobby</h3>
-      <p class="find-us-address">THE MART<br>222 W Merchandise Mart Plaza<br>Chicago, IL 60654</p>
-      <a class="find-us-link" href="https://www.google.com/maps/search/?api=1&amp;query=THE+MART+222+W+Merchandise+Mart+Plaza+Chicago" target="_blank" rel="noopener">
-        Open in Google Maps <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-    </div>
-    <a class="find-us-map" href="https://www.google.com/maps/search/?api=1&amp;query=THE+MART+222+W+Merchandise+Mart+Plaza+Chicago" target="_blank" rel="noopener" aria-label="The MART floor plan — open location in Google Maps">
-      <img src="images/pavedstatesmap.jpg" alt="Floor plan of THE MART showing Paved States installation in Suite 121 and the South Lobby" loading="lazy" />
-      <span class="pin">Suite 121</span>
-    </a>
-  </div>
-
-  <div class="info-grid reveal">
-    <div class="info-about">
-      <p><strong style="color: var(--type); font-weight: 700;">PAVED STATES</strong> is a hybrid collective exhibition and concept store presented by Sixtysix magazine.</p>
-      <p>This year's collaboration between <em>Paved States × Haworth DesignLab</em> is presented by Sixtysix magazine and Haworth, with support from NeoCon, IIDA, Rivian, DS &amp; Durga, and Gantri.</p>
-      <p>Review the first edition of Paved States <a class="inline-link" href="https://sixtysixmag.com/paved-states-neocon/" target="_blank" rel="noopener">here</a>.</p>
-    </div>
-
-    <aside class="info-side">
-      <div class="info-block">
-        <div class="label">Media Inquiries</div>
-        <div class="name">Katie Fosdick</div>
-        <div class="role">Novita PR</div>
-        <a class="email" href="mailto:katiefosdick@novitapr.com">katiefosdick@novitapr.com</a>
-      </div>
-      <div class="info-block">
-        <div class="label">Sponsorship Opportunities</div>
-        <div class="name">Laura Howe</div>
-        <div class="role">Studio Sixtysix</div>
-        <a class="email" href="mailto:laura@sixtysixmag.com">laura@sixtysixmag.com</a>
-      </div>
-      <div class="info-block">
-        <div class="label">Press Kit</div>
-        <a class="email" href="https://drive.google.com/drive/folders/1m98MWt1vvR7siXYApGt1MpLvHLlJs278?usp=sharing" target="_blank" rel="noopener">Open Press Kit ↗</a>
-      </div>
-    </aside>
-  </div>
-
-  <div class="sponsors reveal">
-    <div class="sponsors-label">Presented By &amp; With Support From</div>
-    <div class="sponsor-grid">
-      <a class="sponsor-card" href="https://sixtysixmag.com/" target="_blank" rel="noopener" aria-label="Sixtysix">
-        <img class="sponsor-img" src="brand_assets/sponsors/sixtysix.png" alt="Sixtysix" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">Sixtysix</span>
-      </a>
-      <a class="sponsor-card" href="https://www.haworth.com/" target="_blank" rel="noopener" aria-label="Haworth">
-        <img class="sponsor-img" src="brand_assets/sponsors/haworth.png" alt="Haworth" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">Haworth</span>
-      </a>
-      <a class="sponsor-card" href="https://neocon.com/" target="_blank" rel="noopener" aria-label="NeoCon">
-        <img class="sponsor-img" src="brand_assets/sponsors/neocon.svg" alt="NeoCon" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">NeoCon</span>
-      </a>
-      <a class="sponsor-card" href="https://www.iida.org/" target="_blank" rel="noopener" aria-label="IIDA">
-        <img class="sponsor-img" src="brand_assets/sponsors/iida.png" alt="IIDA" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">IIDA</span>
-      </a>
-      <a class="sponsor-card" href="https://rivian.com/" target="_blank" rel="noopener" aria-label="Rivian">
-        <img class="sponsor-img" src="brand_assets/sponsors/rivian.png" alt="Rivian" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">Rivian</span>
-      </a>
-      <a class="sponsor-card" href="https://www.dsanddurga.com/" target="_blank" rel="noopener" aria-label="D.S. &amp; Durga">
-        <img class="sponsor-img" src="brand_assets/sponsors/ds-and-durga.svg" alt="D.S. &amp; Durga" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">DS &amp; Durga</span>
-      </a>
-      <a class="sponsor-card" href="https://www.gantri.com/" target="_blank" rel="noopener" aria-label="Gantri">
-        <img class="sponsor-img" src="brand_assets/sponsors/gantri.png" alt="Gantri" onerror="this.classList.add('broken')">
-        <span class="sponsor-text">Gantri</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────── FOOTER ─────────────────────── -->
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="newsletter">
-    <div class="newsletter-eyebrow">Stay in Touch</div>
-    <p class="newsletter-copy">Get the first word on opening night, new programming, and objects landing in the concept store.</p>
-    <div class="newsletter-form">
-      <script async src="https://eomail5.com/form/ceb53056-01dd-11f1-a29c-eb7503ad6fdb.js" data-form="ceb53056-01dd-11f1-a29c-eb7503ad6fdb"></script>
-    </div>
-  </div>
-  <div class="footer-meta">
-    <span>© 2026 Sixtysix Magazine</span>
-    <span class="center">Paved States—A Platform of What's Next</span>
-    <span class="right">The MART · Chicago · June 7—10</span>
-  </div>
-  <div class="footer-credit">Website by <a class="inline-link" href="https://sixtysixmag.com/" target="_blank" rel="noopener">Studio Sixtysix</a></div>
+  <span><a href="https://sixtysixmag.com/" target="_blank" rel="noopener">Sixtysix Magazine ↗</a></span>
+  <span class="center">Photography by Chris Force / Sixtysix</span>
+  <span class="right"><a href="about.html">About &amp; Press</a></span>
 </footer>
 
 <script>
-/* ─────────────────────── ROTATING WORD ─────────────────────── */
+/* ─────────────────────── HERO SLIDESHOW + ROTATOR ─────────────────────── */
 (function () {
-  const words = [
-    'objects', 'ideas', 'the future', 'emerging design',
-    'dreams', 'life', 'exploration', "what's next"
-  ];
-  const el = document.getElementById('rotator');
-  if (!el) return;
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  const rotator = document.getElementById('rotator');
+  const WORDS = ['objects', 'ideas', 'the future', 'emerging design', 'dreams', 'life', 'exploration', "what's next"];
 
-  let i = 0;
+  let slideIdx = 0;
+  let wordIdx = 0;
+  const INTERVAL = 5200;
+
   const swap = () => {
-    el.classList.add('exit');
-    setTimeout(() => {
-      i = (i + 1) % words.length;
-      el.textContent = words[i];
-      el.classList.remove('exit');
-      el.classList.add('enter');
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => el.classList.remove('enter'));
-      });
-    }, 600);
+    // Slide cross-fade
+    slides[slideIdx].classList.remove('active');
+    slideIdx = (slideIdx + 1) % slides.length;
+    slides[slideIdx].classList.add('active');
+
+    // Word swap synced with image transition
+    if (rotator) {
+      rotator.classList.add('exit');
+      setTimeout(() => {
+        wordIdx = (wordIdx + 1) % WORDS.length;
+        rotator.textContent = WORDS[wordIdx];
+        rotator.classList.remove('exit');
+        rotator.classList.add('enter');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => rotator.classList.remove('enter'));
+        });
+      }, 600);
+    }
   };
 
-  setInterval(swap, 2600);
+  setInterval(swap, INTERVAL);
 })();
 
-/* ─────────────────────── CHICAGO CLOCK ─────────────────────── */
+/* ─────────────────────── INSTALL GRID DATA ─────────────────────── */
+const PHOTO_CREDIT = 'Photo · Chris Force / Sixtysix';
+
+// INSTALL — atmospheres + install moments (no crop, no caption)
+// Hero already shows: 1, 5, 17, 16, 51, 48 — those are excluded here to prevent duplicates
+const PS = (n) => `paved-states-haworth-designlab-photos-by-chris-force-${n}.jpg`;
+const INSTALL = [
+  PS(2),
+  PS(3),
+  PS(11),
+  PS(13),
+  PS(21), // yellow perforated metal lamp on lounge table
+  PS(25),
+  PS(28),
+  PS(30),
+  PS(31),
+  PS(33), // polychrome stool / sculptural piece
+  PS(38),
+  PS(39),
+  PS(41), // cream sculptural lamp / vessel — Jean-Michel
+  PS(44), // pink perforated metal lamp detail
+  PS(45), // bulb / lamp form
+  PS(46), // Suite 121 atmosphere
+  PS(49),
+  PS(54),
+  PS(56), // aluminum sculpture
+  PS(58),
+  PS(60),
+  PS(63),
+  PS(65),
+  PS(68),
+  PS(70),
+  'chris-force-20260606-3555.jpg', // moved from lifestyle to install per request
+];
+
+// RETAIL — concept store / lifestyle photos
+// Excluded per request: 3500, 3510, 3555 (3555 moved to install)
+const RETAIL_LIFESTYLE = [
+  'chris-force-20260606-3370.jpg',
+  'chris-force-20260606-3383.jpg',
+  'chris-force-20260606-3408.jpg',
+  'chris-force-20260606-3421.jpg',
+  'chris-force-20260606-3486.jpg',
+  'chris-force-20260606-3487.jpg',
+  'chris-force-20260606-3490.jpg',
+  'chris-force-20260606-3494.jpg',
+  'chris-force-20260606-3497.jpg',
+  'chris-force-20260606-3502.jpg',
+  'chris-force-20260606-3506.jpg',
+  'chris-force-20260606-3514.jpg',
+  'chris-force-20260606-3517.jpg',
+  'chris-force-20260606-3519.jpg',
+  'chris-force-20260606-3522.jpg',
+  'chris-force-20260606-3531.jpg',
+  'chris-force-20260606-3535.jpg',
+];
+
+const WORKS = [
+  { slug: 'stefano-la-poltrona-xl',                file: 'la-poltrona-xl.jpg',                                            title: 'La Poltrona XL',                designer: 'Stefano Giacomello · Studio Rotolo' },
+  { slug: 'jean-michel-theosiris',                 file: 'theosirisofthishsit-01.jpg',                                    title: 'theosiris',                     designer: 'Jean-Michel Gadoua · Galerie Mold' },
+  { slug: 'jean-michel-early-death-armoire',       file: 'earlydeatharmoire-01.jpg',                                      title: 'Early Death Armoire',           designer: 'Jean-Michel Gadoua · Galerie Mold' },
+  { slug: 'ceren-pink-prototype',                  file: 'p-fl-f002-pink.jpg',                                            title: 'Pink Prototype',                designer: 'Ceren Arslan · EXIT' },
+  { slug: 'ceren-arslan-prototype',                file: 'prototype-l.jpg',                                               title: 'Prototype',                     designer: 'Ceren Arslan · EXIT' },
+  { slug: 'alex-hank-black-sand-and-blue-washed',  file: 'black-sand-and-blue-washed-desk-1.jpg',                         title: 'Black Sand & Blue Washed Desk', designer: 'Hank Beyer & Alex Sizemore' },
+  { slug: 'alex-hank-berea-sandstone-lamp',        file: 'berea-sandstone-lamp-on.jpg',                                   title: 'Berea Sandstone Lamp',          designer: 'Hank Beyer & Alex Sizemore' },
+  { slug: 'alex-hank-variegated-berea',            file: 'variegated-berea-on.jpg',                                       title: 'Variegated Berea Sandstone Lamp', designer: 'Hank Beyer & Alex Sizemore' },
+  { slug: 'hannah-b-bluette-chair',                file: 'bluette-chair.jpg',                                             title: 'Bluette Chair',                 designer: 'Hannah Bigeleisen' },
+  { slug: 'hannah-b-throne-walnut',                file: 'throne-walnut-threequarters.jpg',                               title: 'Throne — Walnut',               designer: 'Hannah Bigeleisen' },
+  { slug: 'hannah-b-blobstool',                    file: 'bigeleisen-verso-blobstool-small-solo.jpg',                     title: 'BlobStool',                     designer: 'Hannah Bigeleisen' },
+  { slug: 'kiki-goti-bells-whistle-cabinet',       file: '01-highres-toromanifiesto-photobyalejandroramirezorozco.jpg',   title: 'Bells & Whistle Cabinet',       designer: 'Kiki Goti' },
+  { slug: 'l.goodman-hebron-table',                file: '12laurengoodman-hebron-table-01.jpg',                           title: 'Hebron Table',                  designer: 'Lauren Goodman' },
+  { slug: 'l.goodman-fresh-catch',                 file: '1laurengoodman-fresh-catch-i.jpg',                              title: 'Fresh Catch',                   designer: 'Lauren Goodman' },
+  { slug: 'lauren-goodman-eindhoven',              file: '14laurengoodman-ep01-eindhoven-project.jpg',                    title: 'Eindhoven',                     designer: 'Lauren Goodman' },
+  { slug: 'malcolm-majer-stroop',                  file: 'malcolm-majer-stroop-table.jpg',                                title: 'Stroop Table',                  designer: 'Malcolm Majer' },
+  { slug: 'malcolm-majer-chair-e1-1',              file: 'malcolm-majer-chair-e1-1.jpg',                                  title: 'Chair E1-1',                    designer: 'Malcolm Majer' },
+  { slug: 'malcolm-majer-ssdd-chair',              file: 'malcolm-majer-ssdd-chair.jpg',                                  title: 'SSDD Chair',                    designer: 'Malcolm Majer' },
+  { slug: 'marmar-clog-lounger',                   file: 'clog-lounger.jpg',                                              title: 'Clog Lounger',                  designer: 'marmar studio' },
+  { slug: 'zac-benloulou-wall-system-speaker',     file: '4x4-03347.jpg',                                                  title: 'Wall System + Speaker',         designer: 'Zac Benloulou · Pavilion Audio Systems' },
+  { slug: 'studio-ahead-sheep-floor-pillow',       file: 'studio-ahead-sheep-floor-pillow-1.jpg',                         title: 'Sheep Floor Pillow',            designer: 'Studio AHEAD' },
+];
+
+const BRANDS = [
+  { name: 'Gantri',                         ig: 'gantri' },
+  { name: 'D.S. & Durga',                   ig: 'dsanddurga' },
+  { name: 'Museum Apotheker',               ig: 'museumapotheker' },
+  { name: 'Margin Global',                  ig: 'margin.global' },
+  { name: 'Benjamin Edgar',                 ig: 'benjaminedgar' },
+  { name: 'Larry Tchogninou',               ig: 'larrytchogninou' },
+  { name: 'Essare Jewelry',                 ig: 'essare' },
+  { name: 'Julius Works',                   ig: 'julius.works' },
+  { name: 'Clue Perfumery',                 ig: 'clueperfumery' },
+  { name: 'Hannah Bigeleisen',              ig: 'h.bigeleisen' },
+  { name: 'Studio Formbart',                ig: 'studioformbart' },
+  { name: 'Metalepsis Projects',            ig: 'metalepsisprojects' },
+  { name: 'Pleasure Island',                ig: 'pleasureisland.nyc' },
+  { name: 'Stine Keinicke',                 ig: 'stinekeinicke_studio' },
+  { name: 'Todo Pasa',                      ig: 'todopasaco' },
+  { name: 'Hank Beyer & Alex Sizemore',     ig: 'hbas_co' },
+  { name: 'Lauren Goodman',                 ig: 'laurengoodgal' },
+  { name: 'Malcolm Majer',                  ig: 'malcolmmajer' },
+];
+
+/* ─────────────────────── RENDER ─────────────────────── */
 (function () {
-  const tz = 'America/Chicago';
-  const node = document.getElementById('chicago-time');
-  if (!node) return;
-
-  const fmt = new Intl.DateTimeFormat('en-US', {
-    timeZone: tz,
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  });
-
-  const tick = () => {
-    const now = fmt.format(new Date());
-    node.textContent = `CHI · ${now}`;
-  };
-  tick();
-  setInterval(tick, 30 * 1000);
-})();
-
-/* ─────────────────────── DESIGNERS LIST ─────────────────────── */
-(function () {
-  const designers = [
-    {
-      name: 'Zac Benloulou',
-      region: 'Victoria, BC',
-      img: 'designers/zac-benloulou.jpg',
-      ig: 'pavilionaudiosystems',
-      bio: 'Zac Benloulou of Pavilion Audio Systems is a designer of bespoke sound systems that merge acoustic performance with a considered approach to space, form, and material. Drawing on a dedicated technical understanding of sound reproduction, his practice approaches audio equipment as a form of architecture, designed to complement and define the environments it inhabits. Working across residential, commercial, and hospitality spaces, Benloulou creates pieces that are responsive to context, function, and atmosphere rather than any fixed material language. Through Pavilion Audio Systems, he seeks to move the sound system beyond pure infrastructure, transforming it into both a sensory experience and a considered design object.'
-    },
-    {
-      name: 'Studio Rotolo, Stefano Giacomello',
-      region: 'Montreal',
-      img: 'designers/studio-rotolo.jpg',
-      ig: 'stefo_rotolo',
-      bio: 'Stefano Giacomello is a Swiss-Italian designer and digital artist, known online as stefo_rotolo and the founder of Studio Rotolo. His practice draws from the iconic designs and architecture of the 70s and 80s, with a special nod to Italian design, balancing clean lines with audacious, sculptural forms. La Collection Rotolo, his first collaboration with Boon Paris, is crafted from travertine and marble alongside bold upholstered pieces, and reflects his dual identity as designer and digital artist by blurring the lines between the digital realm and the physical world.'
-    },
-    {
-      name: 'Jean-Michel Gadoua',
-      region: 'Montreal',
-      img: 'designers/jean-michel-gadoua.jpg',
-      ig: 'youthofthebeast',
-      bio: 'Designer-artist, editor and curator, Jean-Michel Gadoua has earned a reputation as an aesthetic and stylistic leader in the world of contemporary design. The designer by trade began his career in graphic design and music. A fixture of the Montreal experimental music scene in the 2000s, he was artistic director of record label Le Son 666. Gadoua then started working for furniture galleries as a design consultant before taking on the roles of Creative Director, Buyer and Showroom Manager. In 2019, Gadoua started designing furniture and founded Éditions 8888, a creative cell for experimentation, where he publishes some of his own designs and those of several other Quebec designers and artists. In 2026, he founded Galerie Mold, a nomadic gallery showcasing sculptural furniture, decorative objects and fine arts. Inspired by brutalism, postmodernism, science-fiction and music, his designs are minimalist, often monolithic and dark. Since 2024, his practice has taken an increasingly sculptural turn.'
-    },
-    {
-      name: 'Ceren Arslan, Bureau Betak & EXIT',
-      region: 'New York',
-      img: 'designers/ceren-arslan.webp',
-      ig: 'exit__ceren',
-      bio: 'Ceren Arslan is a spatial designer and an architect based in New York City. She is the founder of EXIT, a creative project that focuses on architecture, interior design and spatial design through a multidisciplinary lens both in physical and digital forms. Previously trained in the studios of Kelly Wearstler, KPF and SHoP Architects, she currently works as a designer at the renowned creative agency Bureau Betak where she contributes to large-scale productions across fashion, art and music. Within her professional work, the projects she has worked on include clients such as Gucci, Dior, Victoria’s Secret, Off-White, and Carolina Herrera, as well as artists including The Weeknd and BTS. EXIT’s collaborators include Nike and Les Benjamins, and product designers like 6:AM, Pietro Franceschini and Essesi. Through her work with EXIT, Ceren has been recognized by leading publications like Forbes, Architectural Digest, Elle Decor, Dezeen, Design Wanted and Archdaily while showcasing works at events such as Milan Design Week, NYCxDesign and Zona Maco CDMX.'
-    },
-    {
-      name: 'Hank Beyer and Alex Sizemore',
-      region: 'San Francisco',
-      img: 'designers/hbas-co.png',
-      ig: 'hbas_co',
-      bio: 'Hank Beyer and Alex Sizemore are based in San Francisco and have worked collaboratively since 2017 as an object creation studio with a focus on furniture, product, and sculpture across various mediums. The designers met while studying at the University of Cincinnati, and have since produced a diverse body of work spanning furniture, lighting, homewares, collectible design, art, and technology. Their projects often involve reimagining industrial materials and processes and applying them to domestic objects.'
-    },
-    {
-      name: 'Malcolm Majer',
-      region: 'Baltimore',
-      img: 'designers/malcolm-majer.jpg',
-      ig: 'malcolmmajer',
-      bio: 'Malcolm Majer (b. Chicago, IL 1983) combines carefully crafted forms, using the formal language of sculptural minimalism to create furniture and objects that challenge textbook concepts of functional design. Malcolm received his BFA in Furniture Design from the Rhode Island School of Design in 2005 and in 2007 established an architectural metal fabrication business in Baltimore, MD, that he continues to manage and operate while engaging in his own studio practice. Malcolm has exhibited in both design fairs and art galleries in New York, NY; Baltimore, MD; Provincetown, MA; Chicago, IL; Paris and Brussels. His recent work has also been featured in digital and print design publications such as Dwell Magazine, Surface Magazine, and Metropolis Magazine.'
-    },
-    {
-      name: 'Hannah Bigeleisen',
-      region: 'Brooklyn',
-      img: 'designers/hannah-bigeleisen.webp',
-      ig: 'h.bigeleisen',
-      bio: 'Hannah Bigeleisen designs sculptural furniture and lighting in Brooklyn, NY. Her designs are guided by her background in sculpture to create an elegant, yet playful approach. Bigeleisen’s rich understanding of material, form, color and texture leads itself to collections that are highly crafted and designed for a lifetime of joy and inspiration. Hannah founded her Brooklyn based design practice in 2020 after debuting her first lighting collection at Brooklyn Designs. In that same year, she launched her next collection at Collectible Design and SightUnseen Offsite Online. Her work has been published in Domino Magazine, Architectural Digest, Elle Decor Espana, The T-List, Vogue Magazine, Luxe Magazine and Interior Design Magazine. She is also the Editor of Design at Tussle Magazine, an online platform for critical writing and thought in the arts, and curates the First Fridays show for Dudd Haus, a collective gallery in Philadelphia. Most recently, her work can be found at The Residence at Assembly Line in Brooklyn, and Eleven based in Los Angeles.'
-    },
-    {
-      name: 'Kiki Goti',
-      region: 'New York',
-      img: 'designers/kiki-goti.jpg',
-      ig: 'kikigoti',
-      bio: 'Kiki Goti is a Greek designer, architect and educator currently based in New York City. As a maker, Goti hybridizes materials and fabrication methods to explore relationships between materiality, heritage, and identity. Her creative scope spans furniture, public sculptures, and interior design, where she critically engages with notions of femininity, beauty, and ornamentation, offering innovative interpretations of art historical themes. Goti’s work has been featured in the New York Times, Financial Times, Corriere della Sera, Vogue Living, CNN Style, AD, Wallpaper* and Elle Decor. She currently teaches at Pratt Institute and Parsons New School and has previously taught at Carnegie Mellon and the University of Pennsylvania.'
-    },
-    {
-      name: 'Lauren Goodman',
-      region: 'Montreal',
-      img: 'designers/lauren-goodman.jpg',
-      ig: 'laurengoodgal',
-      bio: 'Lauren Goodman is the lead designer and founder of studio Lauren Goodman, a sculptural furniture studio creating innovative works at the intersection of art and design. Lauren’s process is deeply rooted in the landscape, exploring the relationship between material and place. Utilizing found objects and materials sourced from regional waste streams, each piece emerges through a continuous dialogue with her surrounding environment. Through creative exploration into waste as raw material and the interweaving of foraged objects with first-use materials and refined finishes, she seeks to elevate overlooked resources, transforming them into distinctive, one-of-a-kind works. Lauren’s work moves beyond traditional upcycling, offering elegant, functional design solutions to pressing environmental challenges. Goodman has received many awards. Her ongoing series, Fresh Catch, received a 2025 Azure Magazine People’s Choice Award for best furniture collection. In 2023, she received a Wallpaper Magazine design award for best construction, and in 2022 an AZ Design award of merit, a DesignTO juror’s choice award, and a Wallpaper Magazine design award for material innovation. Her work has been exhibited at Dutch Design Week, NYCxDesign and Milan Design Week as well as with galleries in France, Italy, Canada and the US.'
-    },
-    {
-      name: 'Madeline Isakson',
-      region: 'Brooklyn',
-      img: 'designers/madeline-isakson.webp',
-      ig: 'madeline_isakson',
-      bio: 'Madeline Isakson transforms found objects and materials through emerging and traditional fabrication techniques to explore consumer culture. Ubiquitous, mass-produced items we encounter daily are recontextualized and distorted until they become visible again in a new light, a new form that retains the blurry outlines of cultural memory. Driven by an interest in process and material, her work spans a range of collectible design objects, from lighting and furniture to purely sculptural pieces. Madeline’s work has been exhibited internationally, notably during Milan Design Week, Denfair in Australia, and at the Museum of Craft and Design in San Francisco. It has also been featured in The New York Times, New York Magazine and Wallpaper*, among others. She holds a BFA in Furniture Design from California College of the Arts and an MFA in 3D Design from Cranbrook Academy of Art. She is currently based in Brooklyn, New York.'
-    },
-    {
-      name: 'The CULT',
-      region: 'Mexico City',
-      img: 'designers/the-cult.webp',
-      ig: 'thecult_co',
-      bio: 'Siblings Guillermo and Alaide Alejandre live and work in Mexico City. Their practice spans small everyday objects, architectural projects, and interior design. They have collaborated with Herman Miller since 2019, Savvy Studio since 2016, Esrawe Studio since 2015, and PLDO since 2016, contributing numerous pod designs and staying active across a range of office and home furniture collections. They currently design and produce lines for Steelcase Mexico, as well as their own furniture line for Mexico and the United States. Their work has been published in Elle Mexico, Elle Decor, Glocal, Enea, AD, Dezeen, Metropolis, and Design Boom. In 2021, they were selected for the Laguna residency with a regenerative project in Colonia Doctores producing pieces locally, and they were awarded Design Week Mexico’s Furniture Design of the Year for 2021–2022.'
-    },
-    {
-      name: 'marmar',
-      region: 'Portland',
-      img: 'designers/mar-mar.jpg',
-      ig: 'by_mar_mar',
-      bio: 'marmar studio is a furniture and object design practice centered on cultivating endearment to the inanimate. By refining forms to their essentials, marmar creates pieces that align utility and character, where the act of use becomes an expression of personality. The studio’s ethos is to craft playful, beautiful objects that come alive. marmar studio’s practice sits at the intersection of minimalism and familiarity, exploring the bonds people form with the objects they see and use every day. At the heart of the work is the belief that we are naturally inclined to endow the inanimate with spirit. marmar’s visual language consciously anthropomorphizes mechanical, architectural, and animal forms, inviting viewers to see themselves reflected in the built environment. This spark of recognition inspires joyful intimacy with the inanimate, an emotional reaction marmar studio deeply experiences and strives to evoke through its work. marmar studio is based in Portland, Oregon.'
-    },
-    {
-      name: 'Homan Rajai & Elena Dendiberia',
-      region: 'San Francisco',
-      img: 'designers/homan-rajai.jpg',
-      ig: 'studioahead',
-      bio: 'Studio AHEAD is a San Francisco-based art and design collective founded by Homan Rajai and Elena Dendiberia. The studio’s approach is "borderless" in that its roots are far-flung yet deeply embedded in regionality. Drawing from diasporic experiences, the founders believe strongly that there is no universal idea of functionality that fits all cultures and people. What remains constant is an appreciation of tradition and craftsmanship. Studio AHEAD launched its production arm in 2019, and in 2020 began publishing California: A Journal, which chronicles Northern California’s vibrant cultural history. The biennial Same Blue as the Sky began in 2023 as a way to celebrate the regional artists who continually inspire the studio.'
-    },
-  ];
-
-  const list = document.getElementById('designers-list');
-  if (!list) return;
-
-  designers.forEach((d, idx) => {
-    const row = document.createElement('div');
-    row.className = 'designer-row';
-    row.dataset.img = d.img || '';
-    row.dataset.name = d.name;
-    row.dataset.bio = d.bio || '';
-    row.dataset.ig = d.ig || '';
-
-    const ampered = d.name.replace(/&/g, '<span class="ampersand">&amp;</span>');
-
-    row.innerHTML = `
-      <span class="designer-num">${String(idx + 1).padStart(2, '0')}</span>
-      <span class="designer-name">${ampered}</span>
-      <span class="designer-region">${d.region}</span>
-      <span class="designer-mark"></span>
+  // Install masonry (no captions)
+  const ig = document.getElementById('install-grid');
+  INSTALL.forEach((file) => {
+    const fig = document.createElement('figure');
+    fig.dataset.cap = '';
+    fig.dataset.credit = PHOTO_CREDIT;
+    fig.innerHTML = `
+      <img src="images/2026/install/${file}" alt="" loading="lazy" />
     `;
-
-    // Inline panel for mobile / touch tap-to-expand
-    const panel = document.createElement('div');
-    panel.className = 'designer-panel';
-    const inner = document.createElement('div');
-    inner.className = 'designer-panel-inner';
-    if (d.img) {
-      const media = document.createElement('div');
-      media.className = 'designer-panel-media';
-      const img = document.createElement('img');
-      img.src = d.img;
-      img.alt = d.name;
-      img.loading = 'lazy';
-      media.appendChild(img);
-      inner.appendChild(media);
-    }
-    const bioP = document.createElement('p');
-    bioP.className = 'designer-panel-bio';
-    bioP.textContent = d.bio || '';
-    inner.appendChild(bioP);
-    if (d.ig) {
-      const a = document.createElement('a');
-      a.className = 'designer-panel-ig';
-      a.href = 'https://instagram.com/' + d.ig;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.setAttribute('aria-label', d.name + ' on Instagram');
-      a.innerHTML = `<span>@${d.ig}</span><span class="arrow" aria-hidden="true">↗</span>`;
-      inner.appendChild(a);
-    }
-    panel.appendChild(inner);
-    row.appendChild(panel);
-
-    list.appendChild(row);
+    ig.appendChild(fig);
   });
 
-  /* Tap-to-expand for mobile / touch (no-op visual on desktop, where CSS hides the inline panel) */
-  list.addEventListener('click', (e) => {
-    if (e.target.closest('.designer-panel-ig')) return; // let the IG link open normally
-    if (e.target.closest('.designer-panel')) return;     // taps inside the panel don't collapse it
-    const row = e.target.closest('.designer-row');
-    if (!row) return;
-    const wasOpen = row.classList.contains('expanded');
-    list.querySelectorAll('.designer-row.expanded').forEach((r) => r.classList.remove('expanded'));
-    if (!wasOpen) row.classList.add('expanded');
-  });
-
-  /* Anchored preview panel — image, bio, and clickable IG handle */
-  const preview = document.getElementById('preview');
-  const previewImg = document.getElementById('preview-img');
-  const previewName = document.getElementById('preview-name');
-  const previewBio = document.getElementById('preview-bio');
-  const previewIg = document.getElementById('preview-ig');
-  const previewIgHandle = previewIg ? previewIg.querySelector('.preview-ig-handle') : null;
-
-  let activeRow = null;
-  let hideTimer = null;
-  let panelHovered = false;
-
-  const showFor = (row) => {
-    if (!row) return;
-    if (row === activeRow) return;
-    activeRow = row;
-    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-
-    const img = row.dataset.img;
-    const name = row.dataset.name || '';
-    const bio = row.dataset.bio || '';
-    const ig = row.dataset.ig || '';
-
-    if (img) {
-      previewImg.src = img;
-      previewImg.alt = name;
-    } else {
-      previewImg.removeAttribute('src');
-      previewImg.alt = '';
-    }
-    previewName.textContent = name;
-    previewBio.textContent = bio;
-
-    if (ig) {
-      previewIgHandle.textContent = '@' + ig;
-      previewIg.href = 'https://instagram.com/' + ig;
-      previewIg.style.display = '';
-    } else {
-      previewIg.style.display = 'none';
-    }
-
-    if (preview.scrollTop) preview.scrollTop = 0;
-    if (preview.querySelector('.preview-body')) {
-      preview.querySelector('.preview-body').scrollTop = 0;
-    }
-    preview.classList.add('visible');
-    preview.setAttribute('aria-hidden', 'false');
-  };
-
-  const scheduleHide = () => {
-    if (hideTimer) clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      if (panelHovered) return;
-      preview.classList.remove('visible');
-      preview.setAttribute('aria-hidden', 'true');
-      activeRow = null;
-    }, 140);
-  };
-
-  list.addEventListener('mouseover', (e) => {
-    const row = e.target.closest('.designer-row');
-    if (!row) return;
-    showFor(row);
-  });
-
-  list.addEventListener('mouseleave', scheduleHide);
-
-  preview.addEventListener('mouseenter', () => {
-    panelHovered = true;
-    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-  });
-  preview.addEventListener('mouseleave', () => {
-    panelHovered = false;
-    scheduleHide();
-  });
-})();
-
-/* ─────────────────────── STOCKISTS ─────────────────────── */
-(function () {
-  const stockists = [
-    { name: 'Gantri',              ig: 'https://instagram.com/gantri' },
-    { name: 'D.S. & Durga',        ig: 'https://instagram.com/dsanddurga' },
-    { name: 'Museum Apotheker',    ig: 'https://instagram.com/museumapotheker' },
-    { name: 'Margin Global',       ig: 'https://www.instagram.com/margin.global' },
-    { name: 'Benjamin Edgar',      ig: 'https://instagram.com/benjaminedgar' },
-    { name: 'Larry Tchogninou',    ig: 'https://www.instagram.com/larrytchogninou' },
-    { name: 'Essare Jewelry',      ig: 'https://www.instagram.com/essare' },
-    { name: 'Julius Works',        ig: 'https://www.instagram.com/julius.works/' },
-    { name: 'Clue Perfumery',      ig: 'https://www.instagram.com/clueperfumery' },
-    { name: 'Hannah Bigeleisen',   ig: 'https://www.instagram.com/h.bigeleisen' },
-    { name: 'Studio Formbart',     ig: 'https://instagram.com/studioformbart' },
-    { name: 'Metalepsis Projects', ig: 'https://instagram.com/metalepsisprojects' },
-    { name: 'Pleasure Island',     ig: 'https://www.instagram.com/pleasureisland.nyc' },
-    { name: 'Stine Keinicke',      ig: 'https://www.instagram.com/stinekeinicke_studio' },
-    { name: 'Todo Pasa',           ig: 'https://www.instagram.com/todopasaco' },
-    { name: 'Hank Beyer and Alex Sizemore', ig: 'https://instagram.com/hbas_co' },
-    { name: 'Lauren Goodman',      ig: 'https://www.instagram.com/laurengoodgal/' },
-    { name: 'Malcolm Majer',       ig: 'https://www.instagram.com/malcolmmajer/' },
-  ];
-
-  const list = document.getElementById('stockists');
-  if (!list) return;
-
-  // Update label count to match data
-  const countEl = document.querySelector('.stockists-label .count');
-  if (countEl) countEl.textContent = stockists.length + ' Brands';
-
-  const igGlyph = `
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.7 1.46 1.38 2.13a5.86 5.86 0 0 0 2.13 1.38c.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.86 5.86 0 0 0 2.13-1.38 5.86 5.86 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63C19.1.34 18.22.13 16.95.07 15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"/>
-    </svg>`;
-
-  stockists.forEach((s, idx) => {
-    const a = document.createElement('a');
-    a.className = 'stockist';
-    a.href = s.ig;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.setAttribute('aria-label', s.name + ' on Instagram');
-
-    const tagHtml = s.tag
-      ? `<span class="stockist-tag">${s.tag}</span>`
-      : `<span></span>`;
-
-    a.innerHTML = `
-      <span class="stockist-num">${String(idx + 1).padStart(2, '0')}</span>
-      <span class="stockist-name">${s.name}</span>
-      ${tagHtml}
-      <span class="stockist-mark">${igGlyph}</span>
+  // Retail masonry
+  const rg = document.getElementById('retail-grid');
+  RETAIL_LIFESTYLE.forEach((file) => {
+    const fig = document.createElement('figure');
+    fig.dataset.cap = 'Concept store';
+    fig.dataset.credit = PHOTO_CREDIT;
+    fig.innerHTML = `
+      <img src="images/2026/lifestyle/${file}" alt="Concept store" loading="lazy" />
+      <figcaption>Concept store</figcaption>
     `;
-    list.appendChild(a);
+    rg.appendChild(fig);
+  });
+
+  // Works grid
+  const wg = document.getElementById('works-grid');
+  WORKS.forEach((w) => {
+    const fig = document.createElement('figure');
+    fig.dataset.cap = `${w.title} · ${w.designer}`;
+    fig.dataset.credit = `Photo · Courtesy ${w.designer.split('·')[0].trim()}`;
+    fig.innerHTML = `
+      <div class="frame">
+        <img src="images/2026/works/${w.slug}/${w.file}" alt="${w.title} by ${w.designer}" loading="lazy" />
+      </div>
+      <figcaption>
+        <span class="work-title">${w.title}</span>
+        <span class="work-designer">${w.designer}</span>
+      </figcaption>
+    `;
+    wg.appendChild(fig);
+  });
+
+  // Brand list
+  const br = document.getElementById('brands');
+  BRANDS.forEach((b) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <a href="https://instagram.com/${b.ig}" target="_blank" rel="noopener" aria-label="${b.name} on Instagram">
+        <span>${b.name}</span>
+        <span class="at">@${b.ig}</span>
+      </a>
+    `;
+    br.appendChild(li);
   });
 })();
 
-/* ─────────────────────── MOBILE MENU TOGGLE ─────────────────────── */
+/* ─────────────────────── LIGHTBOX ─────────────────────── */
 (function () {
-  const toggle = document.querySelector('.nav-toggle');
-  const menu = document.getElementById('mobile-menu');
-  if (!toggle || !menu) return;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCap = document.getElementById('lightbox-cap');
+  const close = document.getElementById('lightbox-close');
 
-  const setOpen = (open) => {
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menu.classList.toggle('open', open);
-    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
-    document.body.style.overflow = open ? 'hidden' : '';
+  const open = (fig) => {
+    const img = fig.querySelector('img');
+    if (!img || !img.src) return;
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    const cap = fig.dataset.cap || '';
+    const credit = fig.dataset.credit || '';
+    lbCap.innerHTML = cap + (credit ? `<span class="credit">${credit}</span>` : '');
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  const hide = () => {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   };
 
-  toggle.addEventListener('click', () => {
-    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  document.addEventListener('click', (e) => {
+    const fig = e.target.closest('figure');
+    if (!fig) return;
+    if (fig.closest('.masonry') || fig.closest('.works-grid')) {
+      open(fig);
+    }
   });
-
-  menu.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', () => setOpen(false));
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') setOpen(false);
-  });
-})();
-
-/* ─────────────────────── REVEAL ON SCROLL ─────────────────────── */
-(function () {
-  const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    els.forEach((el) => el.classList.add('in'));
-    return;
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-
-  els.forEach((el) => io.observe(el));
+  close.addEventListener('click', hide);
+  lb.addEventListener('click', (e) => { if (e.target === lb) hide(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
 })();
 </script>
 </body>

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About · Paved States</title>
+<meta name="description" content="About Paved States — Sixtysix magazine's curatorial + retail platform championing emerging designers. Press release, contacts, and press kit for Edition 02 at NeoCon 2026." />
+<link rel="icon" href="brand_assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="brand_assets/favicon-180.png" />
+
+<style>
+:root {
+  --bg:        #480D13;
+  --bg-2:      #38080d;
+  --bg-3:      #2a060a;
+  --type:      #c76356;
+  --type-soft: #e9b5ac;
+  --type-mute: #8a4036;
+  --line:      rgba(199, 99, 86, 0.22);
+  --line-2:    rgba(199, 99, 86, 0.10);
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  --side-pad:  clamp(20px, 5vw, 64px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--type);
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+.inline-link {
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  padding-bottom: 1px;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease);
+}
+.inline-link:hover { color: var(--type-soft); border-color: var(--type); }
+::selection { background: var(--type); color: var(--bg); }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; padding: 18px 32px;
+}
+.nav .nav-left { font-size: 0; pointer-events: none; }
+.nav a {
+  text-decoration: none; font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--type); font-weight: 500;
+  position: relative; padding: 6px 0;
+  transition: color 250ms var(--ease);
+}
+.nav .nav-right { justify-self: end; }
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px; background: var(--type);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 400ms var(--ease);
+}
+.nav a:hover { color: var(--type-soft); }
+.nav a:hover::after { transform: scaleX(1); }
+.logo-wrap::after { display: none !important; content: none !important; }
+.logo-wrap {
+  position: relative;
+  display: inline-block;
+  height: 112px;
+  aspect-ratio: 3621 / 2000;
+  transform-origin: center;
+}
+.logo-img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transition: opacity 500ms var(--ease);
+}
+.logo-img.alt { opacity: 0; }
+.logo-wrap:hover .logo-img.primary { opacity: 0; }
+.logo-wrap:hover .logo-img.alt { opacity: 1; }
+@media (max-width: 700px) {
+  .nav { padding: 14px 18px; }
+  .logo-wrap { height: 88px; }
+}
+
+/* HERO */
+.hero {
+  padding: 200px var(--side-pad) 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--type-mute); font-weight: 600;
+  margin: 0 0 18px;
+}
+.hero-title {
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  margin: 0 0 32px;
+  color: var(--type);
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--type-soft);
+}
+.hero-lede {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  line-height: 1.45;
+  color: var(--type-soft);
+  max-width: 56ch;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+
+/* SECTION */
+.section {
+  padding: 0 var(--side-pad) 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  gap: 48px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+  margin-bottom: 24px;
+}
+.section-num {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--type-mute); font-weight: 600; margin: 0;
+}
+.section-title {
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--type);
+}
+.section-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--type-soft);
+}
+.section-body {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  gap: 48px;
+  align-items: start;
+}
+.section-body .lead {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--type-mute); font-weight: 600;
+}
+.section-body .body {
+  font-size: clamp(1rem, 1.15vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--type);
+  max-width: 64ch;
+}
+.section-body .body p {
+  margin: 0 0 1em;
+}
+.section-body .body p:last-child { margin-bottom: 0; }
+.section-body .body em {
+  font-style: italic;
+  color: var(--type-soft);
+}
+
+@media (max-width: 800px) {
+  .section { padding: 0 18px 48px; }
+  .section-head, .section-body { grid-template-columns: 1fr; gap: 16px; }
+  .section-head { padding-top: 24px; margin-bottom: 16px; }
+  .hero { padding: 120px 18px 40px; }
+}
+
+/* CONTACT GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+.contact-card {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.contact-label {
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--type-mute); font-weight: 600;
+  margin-bottom: 10px;
+}
+.contact-name {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--type);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.contact-role {
+  font-size: 12px;
+  color: var(--type-soft);
+  margin-bottom: 10px;
+}
+.contact-email {
+  font-size: 13px;
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  text-decoration: none;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease);
+}
+.contact-email:hover {
+  color: var(--type-soft);
+  border-color: var(--type);
+}
+
+/* PRESS KIT CTA */
+.press-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--type);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 14px 22px;
+  border-radius: 1px;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease), background 280ms var(--ease), gap 320ms var(--ease);
+}
+.press-cta:hover, .press-cta:focus-visible {
+  color: var(--bg);
+  background: var(--type);
+  border-color: var(--type);
+  gap: 14px;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--line);
+  margin: 80px clamp(20px, 5vw, 64px) 0;
+  padding: 36px 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: end;
+  gap: 24px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--type-mute);
+}
+.footer a { color: var(--type-mute); text-decoration: none; transition: color 280ms var(--ease); }
+.footer a:hover { color: var(--type-soft); }
+.footer .center { text-align: center; }
+.footer .right { text-align: right; }
+.footer .right a {
+  color: var(--type);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+.footer .right a:hover { color: var(--type-soft); border-color: var(--type); }
+@media (max-width: 700px) {
+  .footer { grid-template-columns: 1fr; text-align: center; }
+  .footer .center, .footer .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-left" aria-hidden="true"></div>
+  <div class="nav-center">
+    <a href="index.html" class="logo-wrap" aria-label="Paved States × Haworth DesignLab home">
+      <img class="logo-img primary" src="brand_assets/paved-states-x-haworth_coral.png" alt="Paved States × Haworth DesignLab" />
+      <img class="logo-img alt" src="brand_assets/haworth-x-paved-states_coral.png?v=2" alt="" aria-hidden="true" />
+    </a>
+  </div>
+  <nav class="nav-right" aria-label="Primary">
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">About</p>
+  <h1 class="hero-title">A platform of <em>objects.</em></h1>
+  <p class="hero-lede">Paved States is Sixtysix magazine's curatorial + retail platform — championing emerging designers through immersive, retail-forward exhibition experiences at the intersection of editorial, curation, and commerce.</p>
+</section>
+
+<!-- ABOUT PAVED STATES -->
+<section class="section" id="paved-states">
+  <div class="section-head">
+    <p class="section-num">/ 01</p>
+    <h2 class="section-title">About Paved States</h2>
+  </div>
+  <div class="section-body">
+    <div class="lead">Curated by Chris Force</div>
+    <div class="body">
+      <p>Paved States is Sixtysix magazine's curatorial and retail platform dedicated to championing emerging designers through immersive, retail-forward exhibition experiences. Founded as an extension of the magazine's editorial mission, Paved States operates at the intersection of editorial, curation, and commerce.</p>
+      <p>Each edition transforms a space into a sequence of lived-in settings — part gallery, part exhibition, part retail space — anchored by a curated landscape of designed objects, inviting visitors to browse, touch, and move through the work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDITION 02 -->
+<section class="section" id="edition-02">
+  <div class="section-head">
+    <p class="section-num">/ 02</p>
+    <h2 class="section-title">Edition 02 <em>— NeoCon 2026</em></h2>
+  </div>
+  <div class="section-body">
+    <div class="lead">June 7–10, 2026 · The MART, Chicago</div>
+    <div class="body">
+      <p>Sixtysix magazine and Haworth presented Paved States × Haworth DesignLab, a returning immersive installation and concept exhibition that opened during NeoCon at The Mart in Chicago. The installation featured sculptural furniture and designed objects from a dynamic roster of North American designers, jointly curated by <a class="inline-link" href="https://www.instagram.com/patricia_urquiola" target="_blank" rel="noopener">Patricia Urquiola</a> and Sixtysix creative director <a class="inline-link" href="https://www.instagram.com/chrissforce" target="_blank" rel="noopener">Chris Force</a>. Supported by NeoCon, IIDA, and <a class="inline-link" href="https://www.gantri.com/" target="_blank" rel="noopener">Gantri</a>.</p>
+      <p>The installation transformed The Mart lobby and showroom into a series of lived-in settings anchored by a central analog lounge — complete with curated playlists and guest DJ sessions from <em>Dylan Gold, Tommaso Conforti, and Tone B. Nimble</em>. The space featured a concept store presented by Gantri and a Sixtysix-curated bookstore and newsstand.</p>
+      <p>To celebrate the opening, Sixtysix hosted a cocktail reception on June 8 alongside the launch of <em>Sixtysix Issue 16</em>. Programming included <strong>Patricia Asks Anything</strong>, a moderated conversation in which Patricia Urquiola interviewed each exhibiting designer, alongside <strong>The Curiosity Framework</strong>, a panel with Chicago-based designer Benjamin Edgar on building a practice without a rulebook.</p>
+      <p>Edition 02 was recognized with the <strong>HiP Award</strong> from <em>Interior Design Magazine</em>, honoring the exhibition's contribution to the field during NeoCon 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DESIGNERS -->
+<section class="section" id="designers">
+  <div class="section-head">
+    <p class="section-num">/ 03</p>
+    <h2 class="section-title">Featured Designers</h2>
+  </div>
+  <div class="section-body">
+    <div class="lead">13 designers · North &amp; South America</div>
+    <div class="body">
+      <p>Zac Benloulou, Pavilion Audio Systems (Canada)<br>
+        Stefano Giacomello, Studio Rotolo (Canada)<br>
+        Jean-Michel Gadoua, Galerie Mold (Canada)<br>
+        Ceren Arslan, Bureau Betak &amp; EXIT (USA)<br>
+        Hank Beyer and Alex Sizemore, HBAS Co. (USA)<br>
+        Hannah Bigeleisen, H.Bigeleisen Studio (USA)<br>
+        Kiki Goti (USA)<br>
+        Lauren Goodman, Studio Lauren Goodman (USA)<br>
+        Madeline Isakson (USA)<br>
+        Malcolm Majer (USA)<br>
+        marmar studio (USA)<br>
+        The CULT, Guillermo and Alaide Alejandre (Mexico)<br>
+        Homan Rajai &amp; Elena Dendiberia, Studio AHEAD (USA)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SIXTYSIX -->
+<section class="section" id="sixtysix">
+  <div class="section-head">
+    <p class="section-num">/ 04</p>
+    <h2 class="section-title">About Sixtysix</h2>
+  </div>
+  <div class="section-body">
+    <div class="lead"><a class="inline-link" href="https://sixtysixmag.com/" target="_blank" rel="noopener">sixtysixmag.com ↗</a></div>
+    <div class="body">
+      <p>Sixtysix is an independent design and culture magazine and studio based in Chicago, covering the people and ideas shaping contemporary design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT HAWORTH DESIGNLAB -->
+<section class="section" id="haworth">
+  <div class="section-head">
+    <p class="section-num">/ 05</p>
+    <h2 class="section-title">About Haworth DesignLab</h2>
+  </div>
+  <div class="section-body">
+    <div class="lead"><a class="inline-link" href="https://www.haworth.com/" target="_blank" rel="noopener">haworth.com ↗</a></div>
+    <div class="body">
+      <p>Curated by Patricia Urquiola, the 2026 installation transformed the lobby of The Mart into an immersive landscape for dialogue and discovery. Featuring 13 North American designers, the exhibition explored new ways of living through a sequence of spatial settings dedicated to working, meeting, reading, and unwinding. The journey culminated in an atmospheric listening space — an intimate environment shaped by sculptural lighting, acoustic surfaces, and deep tonal contrasts, where installation, interior, and performance converged.</p>
+      <p>Haworth DesignLab is an initiative established to celebrate new perspectives and artistic visions in the world of design. This collective of designers explores and experiments with different approaches, looking beyond the office furniture industry to create unexpected, emotive and immersive experiences. Launched in 2023, Haworth DesignLab provides a platform to recognize, support and engage with emerging designers whose work demonstrates exceptional experimentation in form and materials.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="section" id="press">
+  <div class="section-head">
+    <p class="section-num">/ 06</p>
+    <h2 class="section-title">Press</h2>
+  </div>
+  <div class="section-body">
+    <div class="lead">Press Kit</div>
+    <div class="body">
+      <p style="margin-bottom: 24px;">High-resolution imagery, designer headshots, and the full post-event release are available in our press kit on Google Drive.</p>
+      <a class="press-cta" href="https://drive.google.com/drive/folders/1m98MWt1vvR7siXYApGt1MpLvHLlJs278?usp=sharing" target="_blank" rel="noopener">Open press kit <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section" id="contacts">
+  <div class="section-head">
+    <p class="section-num">/ 07</p>
+    <h2 class="section-title">Contacts</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-label">Press</div>
+      <div class="contact-name">Katie Fosdick</div>
+      <div class="contact-role">Novita PR</div>
+      <a class="contact-email" href="mailto:katiefosdick@novitapr.com">katiefosdick@novitapr.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-label">Press · Haworth</div>
+      <div class="contact-name">Julie Smith</div>
+      <div class="contact-role">Haworth</div>
+      <a class="contact-email" href="mailto:julie.smith@Haworth.com">julie.smith@Haworth.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-label">Sponsorship</div>
+      <div class="contact-name">Laura Howe</div>
+      <div class="contact-role">Studio Sixtysix</div>
+      <a class="contact-email" href="mailto:laura@sixtysixmag.com">laura@sixtysixmag.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-label">General</div>
+      <div class="contact-name">Sixtysix Magazine</div>
+      <div class="contact-role">Chicago</div>
+      <a class="contact-email" href="https://sixtysixmag.com/" target="_blank" rel="noopener">sixtysixmag.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span><a href="index.html">← Paved States</a></span>
+  <span class="center">A platform of objects · 2026</span>
+  <span class="right"><a href="https://drive.google.com/drive/folders/1m98MWt1vvR7siXYApGt1MpLvHLlJs278?usp=sharing" target="_blank" rel="noopener">Press kit ↗</a></span>
+</footer>
+
+</body>
+</html>
